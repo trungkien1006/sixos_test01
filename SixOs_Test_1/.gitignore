@@ -1,0 +1,13 @@
+# Visual Studio temp files
+.vs/
+bin/
+obj/
+*.vsidx
+*.vspscc
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+node_modules
+# File content index
+FileContentIndex/

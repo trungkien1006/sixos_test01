@@ -1,0 +1,211 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="py-12 px-4 sm:px-6 lg:px-8 w-[60vw] mx-auto">
+    <div class="w-full mx-auto bg-white p-8 rounded-lg shadow">
+        <h2 class="text-2xl font-bold text-center mb-6">Thông tin sinh viên</h2>
+        <form id="studentForm">
+
+            <div class="flex space-x-8">
+                <div class="space-y-6 w-50">
+                    <!-- Student ID -->
+                    <div>
+                        <label for="studentId" class="block text-sm font-medium text-gray-700">
+                            Mã sinh viên
+                        </label>
+                        <input type="text" id="studentId" name="studentId" autocomplete="off"
+                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm
+                                  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        <p id="studentIdError" class="mt-1 text-sm text-red-600 hidden"></p>
+                    </div>
+
+                    <!-- Student Name -->
+                    <div>
+                        <label for="studentName" class="block text-sm font-medium text-gray-700">
+                            Tên sinh viên
+                        </label>
+                        <input type="text" id="studentName" name="studentName" autocomplete="off"
+                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm
+                                  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        <p id="studentNameError" class="mt-1 text-sm text-red-600 hidden"></p>
+                    </div>
+
+                    <!-- Date of Birth -->
+                    <div>
+                        <label for="dateOfBirth" class="block text-sm font-medium text-gray-700">
+                            Ngày sinh
+                        </label>
+                        <input type="text" id="dob" name="dateOfBirth" maxlength="8" inputmode="numeric" autocomplete="off"
+                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm
+                                  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        <input id="dob_iso" type="date" name="dateOfBirthISO" style="display:none" />
+
+                        <p id="dobError" class="mt-1 text-sm text-red-600 hidden"></p>
+                    </div>
+
+                    <!-- Join Date with Calendar -->
+                    <div>
+                        <label for="joinDate" class="block text-sm font-medium text-gray-700">
+                            Ngày vào đoàn
+                        </label>
+                        <div class="date-picker-container relative">
+                            <input type="text" id="jd" name="joinDate" maxlength="8" inputmode="numeric" autocomplete="off"
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm
+                                      focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer mt-1" id="calendarToggle">
+                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                          d="M6 2a1 1 0 00-1 1v1H4a2 2
+                                      0 00-2 2v10a2 2 0 002 2h12a2
+                                      2 0 002-2V6a2 2 0 00-2-2h-1V3a1
+                                      1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0
+                                      5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                          clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <input id="jd_iso" type="date" name="dateOfBirthISO" style="display:none" />
+                            <div id="calendar" class="calendar-dropdown hidden"></div>
+                        </div>
+                        <p id="jdError" class="mt-1 text-sm text-red-600 hidden"></p>
+                    </div>
+                </div>
+
+                <div class="space-y-6 w-50">
+                    <!-- Province Dropdown -->
+                    <div>
+                        <label for="province" class="block text-sm font-medium text-gray-700">
+                            Tỉnh/Thành phố
+                        </label>
+                        <div class="dropdown-container relative" id="provinceContainer">
+                            <input type="text" id="provinceInput" placeholder="Chọn tỉnh/thành phố" autocomplete="off"
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm
+                                      focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none mt-1">
+                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                          d="M5.293 7.293a1 1 0 011.414 0L10
+                                      10.586l3.293-3.293a1 1 0 111.414
+                                      1.414l-4 4a1 1 0 01-1.414
+                                      0l-4-4a1 1 0 010-1.414z"
+                                          clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <input type="hidden" id="province" name="province">
+                            <div id="provinceDropdown" class="dropdown-list hidden"></div>
+                        </div>
+                        <p id="provinceInputError" class="mt-1 text-sm text-red-600 hidden"></p>
+                    </div>
+
+                    <!-- District Dropdown -->
+                    <div>
+                        <label for="district" class="block text-sm font-medium text-gray-700">
+                            Quận/Huyện
+                        </label>
+                        <div class="dropdown-container relative" id="districtContainer">
+                            <input type="text" id="districtInput" placeholder="Chọn quận/huyện" disabled autocomplete="off"
+                                   class="input-disable mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm
+                                      focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none mt-1">
+                                <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                          d="M5.293 7.293a1 1 0 011.414 0L10
+                                      10.586l3.293-3.293a1 1 0 111.414
+                                      1.414l-4 4a1 1 0 01-1.414
+                                      0l-4-4a1 1 0 010-1.414z"
+                                          clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <input type="hidden" id="district" name="district">
+                            <div id="districtDropdown" class="dropdown-list hidden"></div>
+                        </div>
+                        <p id="districtInputError" class="mt-1 text-sm text-red-600 hidden"></p>
+                    </div>
+
+                    <!-- Tuition Fee -->
+                    <div>
+                        <label for="tuitionFee" class="block text-sm font-medium text-gray-700">
+                            Học phí
+                        </label>
+                        <div class="mt-1 relative rounded-md shadow-sm">
+                            <input type="text" id="tuitionFee" name="tuitionFee" autocomplete="off"
+                                   class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm
+                                      focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                            <input type="hidden" id="tuitionFeeHidden" name="tuitionFeeHidden">
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                <span class="text-gray-500 sm:text-sm">VNĐ</span>
+                            </div>
+                        </div>
+                        <p id="tuitionFeeError" class="mt-1 text-sm text-red-600 hidden"></p>
+                    </div>
+
+                    <!-- Tutoring Fee -->
+                    <div class="">
+                        <label for="tutoringFee" class="block text-sm font-medium text-gray-700">
+                            Phụ đạo
+                        </label>
+                        <div class="mt-1 relative rounded-md shadow-sm">
+                            <input type="text" id="tutoringFee" name="tutoringFee" autocomplete="off"
+                                   class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm
+                                      focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                            <input type="hidden" id="tutoringFeeHidden" name="tutoringFeeHidden">
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                <span class="text-gray-500 sm:text-sm">VNĐ</span>
+                            </div>
+                        </div>
+                        <p id="tutoringFeeError" class="mt-1 text-sm text-red-600 hidden"></p>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="pt-4">
+                        <button type="submit"
+                                class="w-full flex justify-center py-2 px-3 border border-transparent rounded-md
+                                   shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700
+                                   focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Lưu
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+       
+        </form>
+    </div>
+</div>
+
+
+<div class="py-12 px-4 sm:px-6 lg:px-8 w-[60vw] mx-auto">
+    <div class="w-full mx-auto bg-white p-8 rounded-lg shadow">
+        <h2 class="text-2xl font-bold text-center mb-6">Danh sách sinh viên</h2>
+        <table id="student-list" class="min-w-full border-collapse border border-gray-300">
+            <thead>
+                <tr class="bg-gray-100">
+                    <th class="border border-gray-300 px-4 py-2 text-left">Mã SV</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">Tên SV</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">Ngày Sinh</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">Ngày Vào Đoàn</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">Địa chỉ</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">Học Phí</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">Phụ Đạo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dòng mẫu, bạn thay bằng dữ liệu thực -->
+                <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-300 px-4 py-2">SV001</td>
+                    <td class="border border-gray-300 px-4 py-2">Nguyễn Văn A</td>
+                    <td class="border border-gray-300 px-4 py-2">2000-01-01</td>
+                    <td class="border border-gray-300 px-4 py-2">2018-09-01</td>
+                    <td class="border border-gray-300 px-4 py-2">1</td>
+                    <td class="border border-gray-300 px-4 py-2">5000000.00</td>
+                    <td class="border border-gray-300 px-4 py-2">1000000.00</td>
+                </tr>
+                <!-- Thêm các dòng khác -->
+            </tbody>
+        </table>
+
+    </div>
+</div>
