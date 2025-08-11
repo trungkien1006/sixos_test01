@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         ],
         colOptions: {
+            MaSV: {
+                isChecked: true,
+                display: "Mã SV"
+            },
             TenSV: {
                 isChecked: true,
                 display: "Tên SV"
