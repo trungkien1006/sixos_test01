@@ -9,5 +9,6 @@ obj/
 *.userosscache
 *.sln.docstates
 node_modules
+appsettings.json
 # File content index
 FileContentIndex/

@@ -4,7 +4,7 @@ using Pomelo.EntityFrameworkCore.MySql.Infrastructure; // Hoặc using MySql.Dat
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.WebHost.UseUrls("http://0.0.0.0:5000");
+//builder.WebHost.UseUrls("http://0.0.0.0:5000");
 
 // Đăng ký DbContext với MySQL
 builder.Services.AddDbContext<AppDbContext>(options =>

@@ -1,7 +1,269 @@
 document.addEventListener('DOMContentLoaded', function () {
+    var studentManagement = {
+        searchFields: [
+            {
+                code: "TenSV",
+                display: "Tên sinh viên",
+            },
+            {
+                code: "DiaChi",
+                display: "Địa chỉ",
+            }
+        ],
+        colOptions: {
+            TenSV: {
+                isChecked: true,
+                display: "Tên SV"
+            },
+            NgaySinh: {
+                isChecked: true,
+                display: "Ngày sinh"
+            },
+            NgayVaoDoan: {
+                isChecked: true,
+                display: "Ngày vào đoàn"
+            },
+            DiaChi: {
+                isChecked: true,
+                display: "Địa chỉ"
+            },
+            HocPhi: {
+                isChecked: true,
+                display: "Học phí"
+            },
+            PhuDao: {
+                isChecked: true,
+                display: "Phụ đạo"
+            },
+        },
+        limits: [
+            {
+                value: 5,
+            },
+            {
+                value: 10,
+            },
+            {
+                value: 15,
+            },
+            {
+                value: 20,
+            },
+            {
+                value: 30,
+            },
+            {
+                value: 50,
+            },
+            {
+                value: 75,
+            },
+            {
+                value: 100,
+            },
+        ],
+        searchData: "",
+        pagination: {
+            currentPage: 1,
+            totalPages: 8,
+        },
+        currentSearchField: "TenSV",
+        currentLimit: 5,
+    }
+
+    // thêm option cho limit select 
+    var limitOptions = document.getElementById('limitOptions')
+
+    // thêm event khi click vào item sẽ thay đổi trường seachField
+    limitOptions.addEventListener('change', function () {
+        studentManagement.currentLimit = limitOptions.value
+
+        console.log("Select limit")
+        getStudents(studentManagement)
+    })
+
+    var colOptionBtn = document.getElementById('colOptionBtn')
+    var colOptionList = document.getElementById('colOptionList')
+
+    //thêm event bật tắt menu toggle column
+    colOptionBtn.addEventListener('click', function () {
+        colOptionList.classList.toggle('hidden')
+    })
+
+    // gọi hàm get sinh viên khi nhấn nút tìm kiếm
+    var searchBtn = document.getElementById('searchBtn')
+
+    searchBtn.addEventListener('click', function () {
+
+        console.log("Nút tìm kiếm")
+        getStudents(studentManagement)
+    })
+
+    // gán event cho các nút trong chức năng phân trang
+    var paginationToStartBtn = document.getElementById('paginationToStartBtn')
+    var paginationToEndBtn = document.getElementById('paginationToStartBtn')
+    var paginationToNextBtn = document.getElementById('paginationToStartBtn')
+    var paginationToPrevBtn = document.getElementById('paginationToStartBtn')
+
+    paginationToStartBtn.addEventListener('click', function () {
+        if (studentManagement.pagination.currentPage != 1) {
+            studentManagement.pagination.currentPage = 1
+
+            console.log("Nút về 1 phân trang")
+            getStudents(studentManagement)
+        }
+    })
+
+    paginationToEndBtn.addEventListener('click', function () {
+        if (studentManagement.pagination.currentPage != studentManagement.pagination.totalPages) {
+            studentManagement.pagination.currentPage = studentManagement.pagination.totalPages
+
+            console.log("Nút về 1 phân trang")
+            getStudents(studentManagement)
+        }
+    })
+
+    paginationToNextBtn.addEventListener('click', function () {
+        if (studentManagement.pagination.currentPage != studentManagement.pagination.totalPages) {
+            studentManagement.pagination.currentPage = studentManagement.pagination.currentPage + 1
+
+            console.log("Nút tiến tới phân trang")
+            getStudents(studentManagement)
+        }
+    })
+
+    paginationToPrevBtn.addEventListener('click', function () {
+        if (studentManagement.pagination.currentPage != 1) {
+            studentManagement.pagination.currentPage = studentManagement.pagination.currentPage - 1
+
+            console.log("Nút thụt lùi phân trang")
+            getStudents(studentManagement)
+        }
+    })
+
+    function initSearchLimitPagination(studentManagement) {
+        // hiển thị các nút phân trang
+        var paginationNumberField = document.getElementById('pagination-number-field')
+
+        var paginationNumberFieldItem = ''
+
+        var startPaginationBtn = studentManagement.pagination.currentPage - 1
+
+        if (startPaginationBtn < 1) {
+            startPaginationBtn = 1
+        }
+
+        if (studentManagement.pagination.currentPage == studentManagement.pagination.totalPages && studentManagement.pagination.totalPages > 2) {
+            startPaginationBtn = studentManagement.pagination.currentPage - 2
+        }
+
+        for (let i = 0; i < 3; i++) {
+            if (startPaginationBtn > studentManagement.pagination.totalPages) {
+                break;
+            }
+
+            if (startPaginationBtn == studentManagement.pagination.currentPage) {
+                paginationNumberFieldItem += `<a href="#" class="pagination-item inline-flex items-center px-3 py-2 text-white bg-blue-600 border border-blue-600 hover:bg-blue-700 cursor-pointer
+                                                            focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                                ${startPaginationBtn}
+                                            </a>`
+            } else {
+                paginationNumberFieldItem += `<a href="#" class="pagination-item inline-flex items-center px-3 py-2 text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 cursor-pointer
+                                                focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                                 ${startPaginationBtn}
+                                            </a>`
+            }
+
+            startPaginationBtn++
+        }
+
+        paginationNumberField.innerHTML = paginationNumberFieldItem
+
+        // thêm event click cho pagination item --> change data
+        var paginationItems = document.querySelectorAll('.pagination-item')
+
+        paginationItems.forEach(val => {
+            val.addEventListener('click', function () {
+                studentManagement.pagination.currentPage = Number(val.innerHTML)
+
+                console.log("Nút số phân trang")
+                getStudents(studentManagement)
+            })
+        })
+
+      
+
+        var limitOptionItemText = ''
+
+        studentManagement.limits.forEach(item => {
+            limitOptionItemText += `<option class="limit-option-item" value="${item.value}" ${item.value == studentManagement.currentLimit ? "selected" : ""}>${item.value}</option>`
+        })
+
+        limitOptions.innerHTML = limitOptionItemText
+
+        // thay đổi trường searchData khi người dùng nhập vào ô input
+        var searchInput = document.getElementById('searchInput')
+
+        searchInput.addEventListener('input', function (e) {
+            studentManagement.searchData = e.target.value.trim()
+        })
+
+        //thêm option cho search select
+        var searchOptions = document.getElementById('searchOptions')
+
+        var searchOptionItemText = ''
+
+        studentManagement.searchFields.forEach(item => {
+            searchOptionItemText += `<option class="search-option-item" value="${item.code}" ${item.code == studentManagement.currentSearchField ? "selected" : ""}>${item.display}</option>`
+        })
+
+        searchOptions.innerHTML = searchOptionItemText
+
+        // thêm event khi click vào item sẽ thay đổi trường seachField
+        searchOptions.addEventListener('change', function () {
+            studentManagement.currentSearchField = searchOptions.value
+        })
+
+        //thêm các column mặc định của bảng vào toggle menu
+        var colOptionListItemText = ''
+
+        for (const [key, value] of Object.entries(studentManagement.colOptions)) {
+            colOptionListItemText += `<div class="col-option-item flex justify-between px-6 py-3 hover:duration-300 duration-300 hover:bg-gray-100 cursor-pointer">
+                            <input class="pointer-events-none cursor-not-allowed scale-150" type="checkbox" name="colOption" value="${key}" ${value.isChecked ? "checked" : ""}/>
+                            <p id="rowName">${value.display}</p>
+                        </div>`
+        }
+
+        colOptionList.innerHTML = colOptionListItemText
+
+        // thêm event khi click vào item sẽ check checkbox
+        var colOptionListItem = document.querySelectorAll('.col-option-item')
+
+        colOptionListItem.forEach(val => {
+            val.addEventListener('click', function () {
+                if (val.children[0].checked) {
+                    val.children[0].checked = false
+
+                    studentManagement.colOptions[val.children[0].value].isChecked = false
+
+                    console.log("Checkbox column")
+                    getStudents(studentManagement)
+                } else {
+                    val.children[0].checked = true
+
+                    studentManagement.colOptions[val.children[0].value].isChecked = true
+
+                    console.log("Checkbox column")
+                    getStudents(studentManagement)
+                }
+            })
+        })
+    }
+
     var provinces = []
     var districts = []
 
+    // Convert API data to dropdown options
     function convertProvincesToDropDownOptions(data) {
         return data.map(item => ({
             id: item.id,
@@ -10,6 +272,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }));
     }
 
+    // Convert API data to dropdown options for districts
     function convertDistrictsToDropDownOptions(data) {
         return data.map(item => ({
             id: item.id,
@@ -145,7 +408,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function createStudent(formData) {
         $.ajax({
-            url: `/api/sinh-vien`,
+            url: `/api/sinh-vien/create`,
             type: 'POST',
             dataType: 'json',
             contentType: 'application/json',  // Quan trọng để gửi JSON
@@ -173,7 +436,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const tbody = document.querySelector('#student-list tbody');
         tbody.innerHTML = ''; // Xóa hết nội dung cũ
 
-        data.forEach(item => {
+        studentManagement.pagination.totalPages = data.totalPages
+
+        data.students.forEach(item => {
             // Format ngày dd-MM-yyyy
             const formatDate = (isoStr) => {
                 if (!isoStr) return '';
@@ -188,30 +453,69 @@ document.addEventListener('DOMContentLoaded', function () {
             const row = document.createElement('tr');
             row.classList.add('hover:bg-gray-50');
 
-            row.innerHTML = `
-                <td class="border border-gray-300 px-4 py-2">${item.maSV}</td>
-                <td class="border border-gray-300 px-4 py-2">${item.tenSV}</td>
-                <td class="border border-gray-300 px-4 py-2">${formatDate(item.ngaySinh)}</td>
-                <td class="border border-gray-300 px-4 py-2">${formatDate(item.ngayVaoDoan)}</td>
-                <td class="border border-gray-300 px-4 py-2">${item.diaChi || ''}</td>
-                <td class="border border-gray-300 px-4 py-2">${item.hocPhi?.toLocaleString() || ''}</td>
-                <td class="border border-gray-300 px-4 py-2">${item.phuDao?.toLocaleString() || ''}</td>
-            `;
+            var tableHeader = document.getElementById('table-header')
 
+            var tableHeaderItem = ``
+            var tableBodyItem = ``
+
+            for (const [key, value] of Object.entries(studentManagement.colOptions)) {
+                if (value.isChecked) {
+                    tableHeaderItem += `<th class="border border-gray-300 px-4 py-2 text-left">${value.display}</th>`
+
+                    switch (key) {
+                        case "MaSV": case "TenSV": case "DiaChi": case "HocPhi": case "PhuDao": {
+                            tableBodyItem += `<td class="border border-gray-300 px-4 py-2">${item[key] || ''}</td>`;
+                            break;
+                        }
+                        case "NgaySinh": case "NgayVaoDoan": {
+                            tableBodyItem += `<td class="border border-gray-300 px-4 py-2">${formatDate(item[key])}</td>`;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            row.innerHTML = tableBodyItem;
+
+            tableHeader.innerHTML = tableHeaderItem 
             tbody.appendChild(row);
         });
     }
 
-    function getStudents() {
+    function getStudents(studentManagement) {
+        console.log(studentManagement)
+
+        var columns = []
+
+        for (const [key, value] of Object.entries(studentManagement.colOptions)) {
+            if (value.isChecked) {
+                columns.push(key)
+            }
+        }
+
         $.ajax({
             url: `/api/sinh-vien`,
-            type: 'GET',
+            type: 'POST',
             dataType: 'json',
-            data: {},
+            contentType: 'application/json',  // Quan trọng để gửi JSON
+            data: JSON.stringify({
+                searchValue: studentManagement.searchData,
+                searchType: studentManagement.currentSearchField,
+                page: studentManagement.pagination.currentPage,
+                limit: studentManagement.currentLimit,
+                columns: columns,
+            }),
             success: function (response) {
                 console.log("Dữ liệu nhận được:", response);
 
                 fillStudentTable(response)
+
+                document.getElementById('studentForm').reset();
+                resetErrorField()
+                districtDropdown.setValue('');
+                districtDropdown.disable();
+
+                initSearchLimitPagination(studentManagement)
             },
             error: function (xhr, status, error) {
                 console.error("Lỗi:", error);
@@ -219,7 +523,50 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    getStudents()
+    getStudents(studentManagement)
+
+    // toggle modal
+    var overlay = document.getElementById('overlay');
+    var modal = document.getElementById('modal');
+    var createButton = document.getElementById('createBtn');
+    var closeButton = document.getElementById('closeBtn');
+
+    overlay.addEventListener('click', function () {
+        overlay.classList.add('hidden');
+    })
+
+    modal.addEventListener('click', function (e) {
+        e.stopPropagation()
+    })
+
+    closeButton.addEventListener('click', function () {
+        overlay.classList.add('hidden');
+    })
+
+    createButton.addEventListener('click', function () {
+        overlay.classList.remove('hidden');
+
+        document.getElementById('studentForm').reset();
+        resetErrorField()
+
+        districtDropdown.setValue('');
+        districtDropdown.disable();
+    });
+
+    function resetErrorField() {
+        var errorFields = document.querySelectorAll('.error-field')
+        var inputFields = document.querySelectorAll('.input-field')
+
+        inputFields.forEach(item => {
+            item.classList.remove('error-border');
+        })
+
+        errorFields.forEach(item => {
+            item.innerHTML = ""
+        })
+    }
+
+    initSearchLimitPagination(studentManagement)
 });
 
 

@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SixOs_Test_1.Models;
 using SixOs_Test_1.DTOs;
+using SixOs_Test_1.Models;
+using System.Linq;
+using System.Linq.Dynamic.Core;
+using System.Text.Json;
 
 namespace SixOs_Test_1.Controllers.APIs
 {
@@ -16,7 +19,7 @@ namespace SixOs_Test_1.Controllers.APIs
             _context = context;
         }
 
-        [HttpPost]
+        [HttpPost("/create")]
         public async Task<IActionResult> Create([FromBody] CreateSinhVienDTO dto)
         {
             if (!ModelState.IsValid)
@@ -40,39 +43,72 @@ namespace SixOs_Test_1.Controllers.APIs
             return Ok(new { message = "Thêm sinh viên thành công", data = sv });
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<SinhVien>>> GetAll()
+        [HttpPost]
+        public async Task<ActionResult<GetSinhVienResponseDTO>> GetAll([FromBody] GetSinhVienDTO dto)
         {
-            var query = _context.SinhVien
-            .GroupJoin(_context.TinhTP,
-                sv => sv.IDTinhTP,
-                tp => tp.ID,
-                (sv, tps) => new { sv, tps })
-            .SelectMany(
-                x => x.tps.DefaultIfEmpty(),
-                (x, tp) => new { x.sv, tp })
-            .GroupJoin(_context.QuanHuyen,
-                x => x.sv.IDQuanHuyen,
-                qh => qh.ID,
-                (x, qhs) => new { x.sv, x.tp, qhs })
-            .SelectMany(
-                x => x.qhs.DefaultIfEmpty(),
-                (x, qh) => new
+            // Tạo query cơ bản
+            var baseQuery = _context.SinhVien
+                .GroupJoin(_context.TinhTP,
+                    sv => sv.IDTinhTP,
+                    tp => tp.ID,
+                    (sv, tps) => new { sv, tps })
+                .SelectMany(
+                    x => x.tps.DefaultIfEmpty(),
+                    (x, tp) => new { x.sv, tp })
+                .GroupJoin(_context.QuanHuyen,
+                    x => x.sv.IDQuanHuyen,
+                    qh => qh.ID,
+                    (x, qhs) => new { x.sv, x.tp, qhs })
+                .SelectMany(
+                    x => x.qhs.DefaultIfEmpty(),
+                    (x, qh) => new
+                    {
+                        ID = x.sv.ID,
+                        MaSV = x.sv.MaSV,
+                        TenSV = x.sv.TenSV,
+                        NgaySinh = x.sv.NgaySinh,
+                        NgayVaoDoan = x.sv.NgayVaoDoan,
+                        DiaChi = ((qh != null ? qh.TenQuanHuyen : "") + " - " + (x.tp != null ? x.tp.TenTinhTP : "")),
+                        HocPhi = x.sv.HocPhi,
+                        PhuDao = x.sv.PhuDao
+                    });
+
+            // Filter
+            if (!string.IsNullOrEmpty(dto.SearchValue) && !string.IsNullOrEmpty(dto.SearchType))
+            {
+                string searchValue = dto.SearchValue.ToLower();
+                baseQuery = baseQuery.Where($"{dto.SearchType}.ToLower().Contains(@0)", searchValue);
+            }
+
+            // Tính tổng
+            int totalRecord = await baseQuery.CountAsync();
+
+            // Phân trang và lấy dữ liệu
+            int skip = (dto.Page - 1) * dto.Limit;
+            var allData = await baseQuery.Skip(skip).Take(dto.Limit).ToListAsync();
+
+            // Tạo select động bằng reflection
+            var result = allData.Select(item =>
+            {
+                var dict = new Dictionary<string, object>();
+                var itemType = item.GetType();
+
+                foreach (var column in dto.Columns)
                 {
-                    x.sv.ID,
-                    x.sv.MaSV,
-                    x.sv.TenSV,
-                    x.sv.NgaySinh,
-                    x.sv.NgayVaoDoan,
-                    DiaChi = ((qh != null ? qh.TenQuanHuyen : "") + " - " + (x.tp != null ? x.tp.TenTinhTP : "")).Trim(' ', '-'),
-                    x.sv.HocPhi,
-                    x.sv.PhuDao
-                });
+                    var property = itemType.GetProperty(column);
+                    if (property != null)
+                    {
+                        dict[column] = property.GetValue(item);
+                    }
+                }
+                return dict;
+            }).ToList();
 
-
-            var students = await query.ToListAsync();
-
-            return Ok(students);
+            return (new GetSinhVienResponseDTO
+            {
+                students = result, // Cast về kiểu SinhVien nếu cần
+                totalPages = (int)Math.Ceiling((double)totalRecord / dto.Limit)
+            });
         }
     }
 }

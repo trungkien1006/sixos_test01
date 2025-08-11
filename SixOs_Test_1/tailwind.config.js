@@ -9,4 +9,4 @@ module.exports = {
   },
   plugins: [],
 }
-//npx @tailwindcss/cli -i ./wwwroot/css/input.css -o ./wwwroot/css/output.css --watch
+//npx @tailwindcss/cli -i ./wwwroot/css/index.css -o ./wwwroot/css/output.css --watch
