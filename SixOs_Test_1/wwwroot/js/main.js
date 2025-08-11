@@ -424,7 +424,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }),
             success: function (response) {
                 console.log("Dữ liệu nhận được:", response);
-                getStudents()
+                getStudents(studentManagement)
             },
             error: function (xhr, status, error) {
                 console.error("Lỗi:", error);

@@ -19,7 +19,7 @@ namespace SixOs_Test_1.Controllers.APIs
             _context = context;
         }
 
-        [HttpPost("/create")]
+        [HttpPost("create")]
         public async Task<IActionResult> Create([FromBody] CreateSinhVienDTO dto)
         {
             if (!ModelState.IsValid)
