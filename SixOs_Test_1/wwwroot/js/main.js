@@ -436,6 +436,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    function formatNumber(num) {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
     function fillStudentTable(data) {
         const tbody = document.querySelector('#student-list tbody');
         tbody.innerHTML = ''; // Xóa hết nội dung cũ
@@ -467,12 +470,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     tableHeaderItem += `<th class="border border-gray-300 px-4 py-2 text-left">${value.display}</th>`
 
                     switch (key) {
-                        case "MaSV": case "TenSV": case "DiaChi": case "HocPhi": case "PhuDao": {
-                            tableBodyItem += `<td class="border border-gray-300 px-4 py-2">${item[key] || ''}</td>`;
+                        case "MaSV": case "TenSV": case "DiaChi": {
+                            tableBodyItem += `<td class="border border-gray-300 px-4 py-2 !text-left">${item[key] || ''}</td>`;
+                            break;
+                        }
+                        case "HocPhi": case "PhuDao": {
+                            tableBodyItem += `<td class="border border-gray-300 px-4 py-2 !text-right">${formatNumber(item[key]) || ''}</td>`;
                             break;
                         }
                         case "NgaySinh": case "NgayVaoDoan": {
-                            tableBodyItem += `<td class="border border-gray-300 px-4 py-2">${formatDate(item[key])}</td>`;
+                            tableBodyItem += `<td class="border border-gray-300 px-4 py-2 text-center">${formatDate(item[key])}</td>`;
                             break;
                         }
                     }
