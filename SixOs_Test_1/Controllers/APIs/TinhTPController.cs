@@ -18,7 +18,7 @@ namespace SixOs_Test_1.Controllers.APIs
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TinhTP>>> GetAll()
         {
-            var provinces = await _context.TinhTP.ToListAsync();
+            var provinces = await _context.TinhTP.OrderBy(p => p.TenTinhTP).ToListAsync();
 
             return Ok(provinces);
         }
