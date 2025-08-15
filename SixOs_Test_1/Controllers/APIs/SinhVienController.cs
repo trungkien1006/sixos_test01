@@ -29,12 +29,15 @@ namespace SixOs_Test_1.Controllers.APIs
             {
                 MaSV = dto.MaSV,
                 TenSV = dto.TenSV,
-                IDTinhTP = dto.IDTinhTP,
-                IDQuanHuyen = dto.IDQuanHuyen,
+                DiaChi = dto.DiaChi,    
                 NgaySinh = dto.NgaySinh,
                 NgayVaoDoan = dto.NgayVaoDoan,
                 HocPhi = dto.HocPhi,
-                PhuDao = dto.PhuDao
+                PhuDao = dto.PhuDao,
+                Active = true,
+                CreatedAt = DateTime.Now,
+                UpdatedAt = null,
+                DeletedAt = null // Mặc định không xóa
             };
 
             _context.SinhVien.Add(sv); // LINQ insert
@@ -46,46 +49,60 @@ namespace SixOs_Test_1.Controllers.APIs
         [HttpPost]
         public async Task<ActionResult<GetSinhVienResponseDTO>> GetAll([FromBody] GetSinhVienDTO dto)
         {
-            // Tạo query cơ bản
-            var baseQuery = _context.SinhVien
-                .GroupJoin(_context.TinhTP,
-                    sv => sv.IDTinhTP,
-                    tp => tp.ID,
-                    (sv, tps) => new { sv, tps })
-                .SelectMany(
-                    x => x.tps.DefaultIfEmpty(),
-                    (x, tp) => new { x.sv, tp })
-                .GroupJoin(_context.QuanHuyen,
-                    x => x.sv.IDQuanHuyen,
-                    qh => qh.ID,
-                    (x, qhs) => new { x.sv, x.tp, qhs })
-                .SelectMany(
-                    x => x.qhs.DefaultIfEmpty(),
-                    (x, qh) => new
-                    {
-                        ID = x.sv.ID,
-                        MaSV = x.sv.MaSV,
-                        TenSV = x.sv.TenSV,
-                        NgaySinh = x.sv.NgaySinh,
-                        NgayVaoDoan = x.sv.NgayVaoDoan,
-                        DiaChi = ((qh != null ? qh.TenQuanHuyen : "") + " - " + (x.tp != null ? x.tp.TenTinhTP : "")),
-                        HocPhi = x.sv.HocPhi,
-                        PhuDao = x.sv.PhuDao
-                    });
+            // Tạo query gốc trước Select
+            var query = _context.SinhVien
+                .Where(p => p.DeletedAt == null); // Chỉ lấy SV chưa bị xóa
 
-            // Filter
+            // Filter không dấu
             if (!string.IsNullOrEmpty(dto.SearchValue) && !string.IsNullOrEmpty(dto.SearchType))
             {
                 string searchValue = dto.SearchValue.ToLower();
-                baseQuery = baseQuery.Where($"{dto.SearchType}.ToLower().Contains(@0)", searchValue);
+
+                switch (dto.SearchType)
+                {
+                    case "MaSV":
+                        query = query.Where(p => EF.Functions.Like(
+                            EF.Functions.Collate(p.MaSV, "SQL_Latin1_General_CP1_CI_AI"),
+                            $"%{searchValue}%"));
+                        break;
+                    case "TenSV":
+                        query = query.Where(p => EF.Functions.Like(
+                            EF.Functions.Collate(p.TenSV, "SQL_Latin1_General_CP1_CI_AI"),
+                            $"%{searchValue}%"));
+                        break;
+                    case "DiaChi":
+                        query = query.Where(p => EF.Functions.Like(
+                            EF.Functions.Collate(p.DiaChi, "SQL_Latin1_General_CP1_CI_AI"),
+                            $"%{searchValue}%"));
+                        break;
+                        // thêm các case khác nếu cần
+                }
             }
 
             // Tính tổng
-            int totalRecord = await baseQuery.CountAsync();
+            int totalRecord = await query.CountAsync();
 
-            // Phân trang và lấy dữ liệu
+            // Phân trang và lấy dữ liệu sau khi filter
             int skip = (dto.Page - 1) * dto.Limit;
-            var allData = await baseQuery.Skip(skip).Take(dto.Limit).ToListAsync();
+            var allData = await query
+                .OrderBy(p => p.ID) // thêm sort để tránh skip/take lỗi
+                .Skip(skip)
+                .Take(dto.Limit)
+                .Select(p => new
+                {
+                    ID = p.ID,
+                    MaSV = p.MaSV,
+                    TenSV = p.TenSV,
+                    NgaySinh = p.NgaySinh,
+                    NgayVaoDoan = p.NgayVaoDoan,
+                    DiaChi = p.DiaChi,
+                    HocPhi = p.HocPhi,
+                    PhuDao = p.PhuDao,
+                    Active = p.Active,
+                    CreatedAt = p.CreatedAt,
+                    UpdatedAt = p.UpdatedAt,
+                })
+                .ToListAsync();
 
             // Tạo select động bằng reflection
             var result = allData.Select(item =>
@@ -104,11 +121,13 @@ namespace SixOs_Test_1.Controllers.APIs
                 return dict;
             }).ToList();
 
-            return (new GetSinhVienResponseDTO
+            return new GetSinhVienResponseDTO
             {
-                students = result, // Cast về kiểu SinhVien nếu cần
+                students = result,
                 totalPages = (int)Math.Ceiling((double)totalRecord / dto.Limit)
-            });
+            };
         }
+
+
     }
 }

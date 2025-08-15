@@ -20,22 +20,21 @@ namespace SixOs_Test_1.Models
 
         public DateTime? NgayVaoDoan { get; set; }
 
-        // FK tới TinhTP
-        [ForeignKey("TinhTP")]
-        public int? IDTinhTP { get; set; }
+        public string? DiaChi { get; set; } 
 
-        public virtual TinhTP TinhTP { get; set; }
-
-        // FK tới QuanHuyen
-        [ForeignKey("QuanHuyen")]
-        public int? IDQuanHuyen { get; set; }
-
-        public virtual QuanHuyen QuanHuyen { get; set; }
 
         [Column(TypeName = "decimal(15,2)")]
         public decimal? HocPhi { get; set; }
 
         [Column(TypeName = "decimal(15,2)")]
         public decimal? PhuDao { get; set; }
+
+        public bool Active { get; set; }
+
+        public DateTime? CreatedAt { get; set; }
+
+        public DateTime? UpdatedAt { get; set; }
+
+        public DateTime? DeletedAt { get; set; }
     }
 }

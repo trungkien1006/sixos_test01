@@ -18,9 +18,7 @@ namespace SixOs_Test_1.DTOs
 
         public DateTime? NgayVaoDoan { get; set; }
 
-        public int? IDTinhTP { get; set; }
-
-        public int? IDQuanHuyen { get; set; }
+        public string? DiaChi { get; set; }
 
         [Column(TypeName = "decimal(15,2)")]
         public decimal? HocPhi { get; set; }

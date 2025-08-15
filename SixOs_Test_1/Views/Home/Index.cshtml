@@ -2,8 +2,9 @@
     ViewData["Title"] = "Home Page";
 }
 
+
 <div id="overlay" class="fixed inset-0 flex items-center justify-center z-[5] hidden bg-[rgba(107,114,128,0.5)]">
-    <div class="container px-16">
+    <div class="container px-48">
         <div id="modal" class="relative z-[10]">
             <div id="closeBtn" class="absolute right-2 top-2 cursor-pointer hover:opacity-[0.8] duration-300 hover:duration-300">
                 <i class="fa-solid fa-xmark fa-2x"></i>
@@ -35,49 +36,7 @@
                                 <p id="studentNameError" class="error-field mt-1 text-sm text-red-600 hidden"></p>
                             </div>
 
-                            <!-- Date of Birth -->
-                            <div>
-                                <label for="dateOfBirth" class="block text-sm font-medium text-gray-700">
-                                    Ngày sinh
-                                </label>
-                                <input type="text" id="dob" name="dateOfBirth" maxlength="8" inputmode="numeric" autocomplete="off" value="dd-MM-yyyy"
-                                       class="input-field mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm
-                                  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-                                <input class="input-field" id="dob_iso" type="date" name="dateOfBirthISO" style="display:none" />
-
-                                <p id="dobError" class="error-field mt-1 text-sm text-red-600 hidden"></p>
-                            </div>
-
-                            <!-- Join Date with Calendar -->
-                            <div>
-                                <label for="joinDate" class="block text-sm font-medium text-gray-700">
-                                    Ngày vào đoàn
-                                </label>
-                                <div class="date-picker-container relative">
-                                    <input type="text" id="jd" name="joinDate" maxlength="8" inputmode="numeric" autocomplete="off" value="dd-MM-yyyy"
-                                           class="input-field mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm
-                                      focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-                                    <div class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer mt-1" id="calendarToggle">
-                                        <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg"
-                                             viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                  d="M6 2a1 1 0 00-1 1v1H4a2 2
-                                      0 00-2 2v10a2 2 0 002 2h12a2
-                                      2 0 002-2V6a2 2 0 00-2-2h-1V3a1
-                                      1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0
-                                      5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                                                  clip-rule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <input class="input-field" id="jd_iso" type="date" name="dateOfBirthISO" style="display:none" />
-                                    <div id="calendar" class="calendar-dropdown hidden"></div>
-                                </div>
-                                <p id="jdError" class="error-field mt-1 text-sm text-red-600 hidden"></p>
-                            </div>
-                        </div>
-
-                        <div class="space-y-6 w-1/2">
-                            <!-- Province Dropdown -->
+                              <!-- Province Dropdown -->
                             <div>
                                 <label for="province" class="block text-sm font-medium text-gray-700">
                                     Tỉnh/Thành phố
@@ -129,6 +88,85 @@
                                 <p id="districtInputError" class="error-field mt-1 text-sm text-red-600 hidden"></p>
                             </div>
 
+                           
+                        </div>
+
+                        <div class="space-y-6 w-1/2">
+                           <!-- Date of Birth -->
+                            <div>
+                                <label for="dateOfBirth" class="block text-sm font-medium text-gray-700">
+                                    Ngày sinh
+                                </label>
+                                <input type="text" id="dob" name="dateOfBirth" maxlength="8" inputmode="numeric" autocomplete="off" value="dd-MM-yyyy"
+                                       class="input-field mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm
+                                  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                                <input class="input-field" id="dob_iso" type="date" name="dateOfBirthISO" style="display:none" />
+
+                                <p id="dobError" class="error-field mt-1 text-sm text-red-600 hidden"></p>
+                            </div>
+
+                            <!-- Join Date with Calendar -->
+                            <div>
+                                <label for="joinDate" class="block text-sm font-medium text-gray-700">
+                                    Ngày vào đoàn
+                                </label>
+                                <div class="date-picker-container relative">
+                                    <input type="text"
+                                           id="joinDate"
+                                           name="joinDate"
+                                           maxlength="10"
+                                           inputmode="numeric"
+                                           autocomplete="off"
+                                           value="dd-MM-yyyy"
+                                           class="input-field mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+                                    <div class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer mt-1" id="calendarToggle" onclick="toggleDatePicker()">
+                                        <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <input type="date"
+                                           id="joinDateISO"
+                                           name="joinDateISO"
+                                           class="input-field"
+                                           style="display: none;"
+                                           readonly />
+                                    <div id="calendar" class="calendar-dropdown absolute z-10 mt-1 w-64 bg-white border border-gray-300 rounded-md shadow-lg p-4" style="display: none;">
+                                        <div class="flex justify-between items-center mb-4">
+                                            <div class="flex space-x-2 w-full">
+                                                <select id="monthSelect" class="flex-1 py-1 px-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-1 focus:ring-indigo-500" onchange="handleMonthChange(this)">
+                                                    <option value="0">Tháng 1</option>
+                                                    <option value="1">Tháng 2</option>
+                                                    <option value="2">Tháng 3</option>
+                                                    <option value="3">Tháng 4</option>
+                                                    <option value="4">Tháng 5</option>
+                                                    <option value="5">Tháng 6</option>
+                                                    <option value="6">Tháng 7</option>
+                                                    <option value="7">Tháng 8</option>
+                                                    <option value="8">Tháng 9</option>
+                                                    <option value="9">Tháng 10</option>
+                                                    <option value="10">Tháng 11</option>
+                                                    <option value="11">Tháng 12</option>
+                                                </select>
+                                                <select id="yearSelect" class="flex-1 py-1 px-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-1 focus:ring-indigo-500" onchange="handleYearChange(this)">
+                                                    <!-- Years will be populated by JavaScript -->
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="grid grid-cols-7 gap-1" id="calendarGrid">
+                                            <div class="w-8 h-8 flex items-center justify-center font-medium text-xs text-gray-500">Su</div>
+                                            <div class="w-8 h-8 flex items-center justify-center font-medium text-xs text-gray-500">Mo</div>
+                                            <div class="w-8 h-8 flex items-center justify-center font-medium text-xs text-gray-500">Tu</div>
+                                            <div class="w-8 h-8 flex items-center justify-center font-medium text-xs text-gray-500">We</div>
+                                            <div class="w-8 h-8 flex items-center justify-center font-medium text-xs text-gray-500">Th</div>
+                                            <div class="w-8 h-8 flex items-center justify-center font-medium text-xs text-gray-500">Fr</div>
+                                            <div class="w-8 h-8 flex items-center justify-center font-medium text-xs text-gray-500">Sa</div>
+                                            <!-- Calendar days will be populated by JavaScript -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <p id="joinDateError" class="mt-1 text-sm text-red-600 hidden"></p>
+                            </div>
+
                             <!-- Tuition Fee -->
                             <div>
                                 <label for="tuitionFee" class="block text-sm font-medium text-gray-700">
@@ -143,7 +181,7 @@
                                         <span class="text-gray-500 sm:text-sm">VNĐ</span>
                                     </div>
                                 </div>
-                                <p id="tuitionFeeError" class="error-field mt-1 text-sm text-red-600 hidden"></p>
+                                <p id="tuitionFeeHiddenError" class="error-field mt-1 text-sm text-red-600 hidden"></p>
                             </div>
 
                             <!-- Tutoring Fee -->
@@ -160,7 +198,7 @@
                                         <span class="text-gray-500 sm:text-sm">VNĐ</span>
                                     </div>
                                 </div>
-                                <p id="tutoringFeeError" class="error-field mt-1 text-sm text-red-600 hidden"></p>
+                                <p id="tutoringFeeHiddenError" class="error-field mt-1 text-sm text-red-600 hidden"></p>
                             </div>
 
                             <!-- Submit Button -->
@@ -181,7 +219,7 @@
 </div>
 
 <div class="container mx-auto px-4 z-[1]">
-    <div class="w-full mx-auto p-12">
+    <div class="w-full mx-auto pt-12 px-12">
         <h2 class="text-2xl font-bold text-center pb-12">Danh sách sinh viên</h2>
 
         <div class="flex py-2 justify-between">
@@ -226,37 +264,244 @@
             </div>
         </div>
 
-        <table id="student-list" class="min-w-full border-collapse border border-gray-300 bg-white">
-            <thead>
-                <tr id="table-header" class="bg-gray-100">
-                    <th class="border border-gray-300 px-4 py-2 text-left">Mã SV</th>
-                    <th class="border border-gray-300 px-4 py-2 text-left">Tên SV</th>
-                    <th class="border border-gray-300 px-4 py-2 text-left">Ngày Sinh</th>
-                    <th class="border border-gray-300 px-4 py-2 text-left">Ngày Vào Đoàn</th>
-                    <th class="border border-gray-300 px-4 py-2 text-left">Địa chỉ</th>
-                    <th class="border border-gray-300 px-4 py-2 text-left">Học Phí</th>
-                    <th class="border border-gray-300 px-4 py-2 text-left">Phụ Đạo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Dòng mẫu, bạn thay bằng dữ liệu thực -->
-                <tr class="hover:bg-gray-50">
-                    <td class="border border-gray-300 px-4 py-2">SV001</td>
-                    <td class="border border-gray-300 px-4 py-2">Nguyễn Văn A</td>
-                    <td class="border border-gray-300 px-4 py-2">2000-01-01</td>
-                    <td class="border border-gray-300 px-4 py-2">2018-09-01</td>
-                    <td class="border border-gray-300 px-4 py-2">1</td>
-                    <td class="border border-gray-300 px-4 py-2">5000000.00</td>
-                    <td class="border border-gray-300 px-4 py-2">1000000.00</td>
-                </tr>
-                <!-- Thêm các dòng khác -->
-            </tbody>
-        </table>
+        <div id="table" class="overflow-y-auto">
+            <table id="student-list" class="min-w-full border-collapse border border-gray-300 bg-white">
+                <thead>
+                    <tr id="table-header" class="bg-gray-100">
+                        <th class="border border-gray-300 px-4 py-2 text-left">STT</th>
+                        <th class="border border-gray-300 px-4 py-2 text-left">Mã SV</th>
+                        <th class="border border-gray-300 px-4 py-2 text-left">Tên SV</th>
+                        <th class="border border-gray-300 px-4 py-2 text-left">Ngày Sinh</th>
+                        <th class="border border-gray-300 px-4 py-2 text-left">Ngày Vào Đoàn</th>
+                        <th class="border border-gray-300 px-4 py-2 text-left">Địa chỉ</th>
+                        <th class="border border-gray-300 px-4 py-2 text-left">Học Phí</th>
+                        <th class="border border-gray-300 px-4 py-2 text-left">Phụ Đạo</th>
+                        <th class="border border-gray-300 px-4 py-2 text-left">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dòng mẫu, bạn thay bằng dữ liệu thực -->
+                    <tr class="hover:bg-gray-50">
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">SV001</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Nguyễn Văn A</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2000-01-01</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2018-09-01</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Bình Đại - Bến Tre</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">5000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">1000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <button class="py-2 px-3 rounded-md text-white bg-yellow-600 hover:bg-yellow-800 mr-2 cursor-pointer"><i class="fa-solid fa-pen"></i></button>
+                            <button class="py-2 px-3 rounded-md text-white bg-red-600 hover:bg-red-800 mr-2 cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">SV001</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Nguyễn Văn A</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2000-01-01</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2018-09-01</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Bình Đại - Bến Tre</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">5000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">1000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <button class="py-2 px-3 rounded-md text-white bg-yellow-600 hover:bg-yellow-800 mr-2 cursor-pointer"><i class="fa-solid fa-pen"></i></button>
+                            <button class="py-2 px-3 rounded-md text-white bg-red-600 hover:bg-red-800 mr-2 cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">SV001</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Nguyễn Văn A</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2000-01-01</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2018-09-01</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Bình Đại - Bến Tre</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">5000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">1000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <button class="py-2 px-3 rounded-md text-white bg-yellow-600 hover:bg-yellow-800 mr-2 cursor-pointer"><i class="fa-solid fa-pen"></i></button>
+                            <button class="py-2 px-3 rounded-md text-white bg-red-600 hover:bg-red-800 mr-2 cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">SV001</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Nguyễn Văn A</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2000-01-01</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2018-09-01</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Bình Đại - Bến Tre</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">5000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">1000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <button class="py-2 px-3 rounded-md text-white bg-yellow-600 hover:bg-yellow-800 mr-2 cursor-pointer"><i class="fa-solid fa-pen"></i></button>
+                            <button class="py-2 px-3 rounded-md text-white bg-red-600 hover:bg-red-800 mr-2 cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">SV001</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Nguyễn Văn A</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2000-01-01</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2018-09-01</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Bình Đại - Bến Tre</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">5000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">1000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <button class="py-2 px-3 rounded-md text-white bg-yellow-600 hover:bg-yellow-800 mr-2 cursor-pointer"><i class="fa-solid fa-pen"></i></button>
+                            <button class="py-2 px-3 rounded-md text-white bg-red-600 hover:bg-red-800 mr-2 cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">SV001</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Nguyễn Văn A</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2000-01-01</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2018-09-01</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Bình Đại - Bến Tre</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">5000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">1000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <button class="py-2 px-3 rounded-md text-white bg-yellow-600 hover:bg-yellow-800 mr-2 cursor-pointer"><i class="fa-solid fa-pen"></i></button>
+                            <button class="py-2 px-3 rounded-md text-white bg-red-600 hover:bg-red-800 mr-2 cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">SV001</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Nguyễn Văn A</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2000-01-01</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2018-09-01</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Bình Đại - Bến Tre</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">5000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">1000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <button class="py-2 px-3 rounded-md text-white bg-yellow-600 hover:bg-yellow-800 mr-2 cursor-pointer"><i class="fa-solid fa-pen"></i></button>
+                            <button class="py-2 px-3 rounded-md text-white bg-red-600 hover:bg-red-800 mr-2 cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">SV001</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Nguyễn Văn A</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2000-01-01</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2018-09-01</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Bình Đại - Bến Tre</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">5000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">1000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <button class="py-2 px-3 rounded-md text-white bg-yellow-600 hover:bg-yellow-800 mr-2 cursor-pointer"><i class="fa-solid fa-pen"></i></button>
+                            <button class="py-2 px-3 rounded-md text-white bg-red-600 hover:bg-red-800 mr-2 cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">SV001</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Nguyễn Văn A</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2000-01-01</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2018-09-01</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Bình Đại - Bến Tre</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">5000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">1000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <button class="py-2 px-3 rounded-md text-white bg-yellow-600 hover:bg-yellow-800 mr-2 cursor-pointer"><i class="fa-solid fa-pen"></i></button>
+                            <button class="py-2 px-3 rounded-md text-white bg-red-600 hover:bg-red-800 mr-2 cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">SV001</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Nguyễn Văn A</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2000-01-01</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2018-09-01</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Bình Đại - Bến Tre</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">5000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">1000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <button class="py-2 px-3 rounded-md text-white bg-yellow-600 hover:bg-yellow-800 mr-2 cursor-pointer"><i class="fa-solid fa-pen"></i></button>
+                            <button class="py-2 px-3 rounded-md text-white bg-red-600 hover:bg-red-800 mr-2 cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">SV001</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Nguyễn Văn A</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2000-01-01</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2018-09-01</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Bình Đại - Bến Tre</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">5000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">1000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <button class="py-2 px-3 rounded-md text-white bg-yellow-600 hover:bg-yellow-800 mr-2 cursor-pointer"><i class="fa-solid fa-pen"></i></button>
+                            <button class="py-2 px-3 rounded-md text-white bg-red-600 hover:bg-red-800 mr-2 cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">SV001</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Nguyễn Văn A</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2000-01-01</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2018-09-01</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Bình Đại - Bến Tre</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">5000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">1000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <button class="py-2 px-3 rounded-md text-white bg-yellow-600 hover:bg-yellow-800 mr-2 cursor-pointer"><i class="fa-solid fa-pen"></i></button>
+                            <button class="py-2 px-3 rounded-md text-white bg-red-600 hover:bg-red-800 mr-2 cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">SV001</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Nguyễn Văn A</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2000-01-01</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2018-09-01</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Bình Đại - Bến Tre</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">5000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">1000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <button class="py-2 px-3 rounded-md text-white bg-yellow-600 hover:bg-yellow-800 mr-2 cursor-pointer"><i class="fa-solid fa-pen"></i></button>
+                            <button class="py-2 px-3 rounded-md text-white bg-red-600 hover:bg-red-800 mr-2 cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">SV001</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Nguyễn Văn A</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2000-01-01</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2018-09-01</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Bình Đại - Bến Tre</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">5000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">1000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <button class="py-2 px-3 rounded-md text-white bg-yellow-600 hover:bg-yellow-800 mr-2 cursor-pointer"><i class="fa-solid fa-pen"></i></button>
+                            <button class="py-2 px-3 rounded-md text-white bg-red-600 hover:bg-red-800 mr-2 cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">SV001</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Nguyễn Văn A</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2000-01-01</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">2018-09-01</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-left">Bình Đại - Bến Tre</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">5000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2 !text-right">1000000.00</td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <button class="py-2 px-3 rounded-md text-white bg-yellow-600 hover:bg-yellow-800 mr-2 cursor-pointer"><i class="fa-solid fa-pen"></i></button>
+                            <button class="py-2 px-3 rounded-md text-white bg-red-600 hover:bg-red-800 mr-2 cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                    <!-- Thêm các dòng khác -->
+                </tbody>
+            </table>
+        </div>
 
-        <div class="flex justify-between py-2">
-            <div class="">
-                <select id="limitOptions" class="block rounded-md bg-white w-32 px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 cursor-pointer">
-                    @* <option value="5">5</option>
+        <div id="pagination" class="bg-gray-50">
+            <div class="container mx-auto">
+                <div id="pagination-container" class="flex justify-between">
+                    <div class="">
+                        <select id="limitOptions" class="block rounded-md bg-white w-32 px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 cursor-pointer">
+                            @* <option value="5">5</option>
                     <option value="10">10</option>
                     <option value="15">15</option>
                     <option value="20">20</option>
@@ -264,23 +509,22 @@
                     <option value="50">50</option>
                     <option value="75">75</option>
                     <option value="100">100</option> *@
-                </select>
-            </div>
+                        </select>
+                    </div>
 
-            <div>
-                <nav id="pagination" class="inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
-                    <a href="#" id="paginationToStartBtn" class="inline-flex items-center px-3 py-2 ml-0 text-gray-500 bg-white border border-gray-300 rounded-l-md hover:bg-gray-50 cursor-pointer
+                    <div>
+                        <nav id="pagination" class="inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+                            <a href="#" id="paginationToStartBtn" class="inline-flex items-center px-3 py-2 ml-0 text-gray-500 bg-white border border-gray-300 rounded-l-md hover:bg-gray-50 cursor-pointer
                                         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                        <i class="fa-solid fa-chevron-left"></i>
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </a>
-                    <a href="#" id="paginationToPrevBtn" class="inline-flex items-center px-3 py-2 ml-0 text-gray-500 bg-white border border-gray-300 hover:bg-gray-50 cursor-pointer
-                                        focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    >
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </a>
-                    <div id="pagination-number-field" class="inline-flex -space-x-px">
-                        @* <a href="#" aria-current="page" class="z-5 inline-flex items-center px-3 py-2 text-white bg-blue-600 border border-blue-600 hover:bg-blue-700 cursor-pointer
+                                <i class="fa-solid fa-chevron-left"></i>
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </a>
+                            <a href="#" id="paginationToPrevBtn" class="inline-flex items-center px-3 py-2 ml-0 text-gray-500 bg-white border border-gray-300 hover:bg-gray-50 cursor-pointer
+                                        focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </a>
+                            <div id="pagination-number-field" class="inline-flex -space-x-px">
+                                @* <a href="#" aria-current="page" class="z-5 inline-flex items-center px-3 py-2 text-white bg-blue-600 border border-blue-600 hover:bg-blue-700 cursor-pointer
                                                             focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                             1
                         </a>
@@ -288,19 +532,20 @@
                                        focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                             2
                         </a> *@
-                    </div>
-                    <a href="#" id="paginationToNextBtn" class="inline-flex items-center px-3 py-2 text-gray-500 bg-white border border-gray-300 hover:bg-gray-50 cursor-pointer
-                                        focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    >
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </a>
-                    <a href="#" id="paginationToEndBtn" class="inline-flex items-center px-3 py-2 text-gray-500 bg-white border border-gray-300 rounded-r-md hover:bg-gray-50 cursor-pointer
+                            </div>
+                            <a href="#" id="paginationToNextBtn" class="inline-flex items-center px-3 py-2 text-gray-500 bg-white border border-gray-300 hover:bg-gray-50 cursor-pointer
                                         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                        <i class="fa-solid fa-chevron-right"></i>
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </a>
-                </nav>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                            <a href="#" id="paginationToEndBtn" class="inline-flex items-center px-3 py-2 text-gray-500 bg-white border border-gray-300 rounded-r-md hover:bg-gray-50 cursor-pointer
+                                        focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <i class="fa-solid fa-chevron-right"></i>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                        </nav>
 
+                    </div>
+                </div>
             </div>
         </div>
     </div>

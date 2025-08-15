@@ -1,0 +1,1849 @@
+[
+  {
+    "MaTinhTP": "TQ",
+    "TenTinhTP": "Tuyên Quang",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "CB",
+        "TenQuanHuyen": "Cao Bằng"
+      },
+      {
+        "MaQuanHuyen": "BLam",
+        "TenQuanHuyen": "Bảo Lâm"
+      },
+      {
+        "MaQuanHuyen": "BLac",
+        "TenQuanHuyen": "Bảo Lạc"
+      },
+      {
+        "MaQuanHuyen": "HQuang",
+        "TenQuanHuyen": "Hà Quảng"
+      },
+      {
+        "MaQuanHuyen": "HLang",
+        "TenQuanHuyen": "Hạ Lang"
+      },
+      {
+        "MaQuanHuyen": "HAn",
+        "TenQuanHuyen": "Hòa An"
+      },
+      {
+        "MaQuanHuyen": "NBinh",
+        "TenQuanHuyen": "Nguyên Bình"
+      },
+      {
+        "MaQuanHuyen": "QHoa",
+        "TenQuanHuyen": "Quảng Hòa"
+      },
+      {
+        "MaQuanHuyen": "TAn",
+        "TenQuanHuyen": "Thạch An"
+      },
+      {
+        "MaQuanHuyen": "TKhanh",
+        "TenQuanHuyen": "Trùng Khánh"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "CB",
+    "TenTinhTP": "Cao Bằng",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "LC",
+        "TenQuanHuyen": "Lai Châu"
+      },
+      {
+        "MaQuanHuyen": "MT",
+        "TenQuanHuyen": "Mường Tè"
+      },
+      {
+        "MaQuanHuyen": "NNhun",
+        "TenQuanHuyen": "Nậm Nhùn"
+      },
+      {
+        "MaQuanHuyen": "PTho",
+        "TenQuanHuyen": "Phong Thổ"
+      },
+      {
+        "MaQuanHuyen": "SH",
+        "TenQuanHuyen": "Sìn Hồ"
+      },
+      {
+        "MaQuanHuyen": "TDuong",
+        "TenQuanHuyen": "Tam Đường"
+      },
+      {
+        "MaQuanHuyen": "TanUyen",
+        "TenQuanHuyen": "Tân Uyên"
+      },
+      {
+        "MaQuanHuyen": "ThanUyen",
+        "TenQuanHuyen": "Than Uyên"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "LChau",
+    "TenTinhTP": "Lai Châu",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "LC",
+        "TenQuanHuyen": "Lào Cai"
+      },
+      {
+        "MaQuanHuyen": "SP",
+        "TenQuanHuyen": "Sa Pa"
+      },
+      {
+        "MaQuanHuyen": "BX",
+        "TenQuanHuyen": "Bát Xát"
+      },
+      {
+        "MaQuanHuyen": "MK",
+        "TenQuanHuyen": "Mường Khương"
+      },
+      {
+        "MaQuanHuyen": "SMC",
+        "TenQuanHuyen": "Si Ma Cai"
+      },
+      {
+        "MaQuanHuyen": "BH",
+        "TenQuanHuyen": "Bắc Hà"
+      },
+      {
+        "MaQuanHuyen": "BThang",
+        "TenQuanHuyen": "Bảo Thắng"
+      },
+      {
+        "MaQuanHuyen": "BYen",
+        "TenQuanHuyen": "Bảo Yên"
+      },
+      {
+        "MaQuanHuyen": "VB",
+        "TenQuanHuyen": "Văn Bàn"
+      },
+      {
+        "MaQuanHuyen": "LC",
+        "TenQuanHuyen": "Lào Cai"
+      },
+      {
+        "MaQuanHuyen": "SP",
+        "TenQuanHuyen": "Sa Pa"
+      },
+      {
+        "MaQuanHuyen": "BX",
+        "TenQuanHuyen": "Bát Xát"
+      },
+      {
+        "MaQuanHuyen": "MK",
+        "TenQuanHuyen": "Mường Khương"
+      },
+      {
+        "MaQuanHuyen": "SMC",
+        "TenQuanHuyen": "Si Ma Cai"
+      },
+      {
+        "MaQuanHuyen": "BH",
+        "TenQuanHuyen": "Bắc Hà"
+      },
+      {
+        "MaQuanHuyen": "BThang",
+        "TenQuanHuyen": "Bảo Thắng"
+      },
+      {
+        "MaQuanHuyen": "BYen",
+        "TenQuanHuyen": "Bảo Yên"
+      },
+      {
+        "MaQuanHuyen": "VB",
+        "TenQuanHuyen": "Văn Bàn"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "LCai",
+    "TenTinhTP": "Lào Cai",
+    "QuanHuyen": []
+  },
+  {
+    "MaTinhTP": "TNguyen",
+    "TenTinhTP": "Thái Nguyên",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "TN",
+        "TenQuanHuyen": "Thái Nguyên"
+      },
+      {
+        "MaQuanHuyen": "SC",
+        "TenQuanHuyen": "Sông Công"
+      },
+      {
+        "MaQuanHuyen": "PY",
+        "TenQuanHuyen": "Phổ Yên"
+      },
+      {
+        "MaQuanHuyen": "DHoa",
+        "TenQuanHuyen": "Định Hóa"
+      },
+      {
+        "MaQuanHuyen": "DHy",
+        "TenQuanHuyen": "Đồng Hỷ"
+      },
+      {
+        "MaQuanHuyen": "PL",
+        "TenQuanHuyen": "Phú Lương"
+      },
+      {
+        "MaQuanHuyen": "VNhai",
+        "TenQuanHuyen": "Võ Nhai"
+      },
+      {
+        "MaQuanHuyen": "DT",
+        "TenQuanHuyen": "Đại Từ"
+      },
+      {
+        "MaQuanHuyen": "PB",
+        "TenQuanHuyen": "Phú Bình"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "DB",
+    "TenTinhTP": "Điện Biên",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "DBP",
+        "TenQuanHuyen": "Thành phố Điện Biên Phủ"
+      },
+      {
+        "MaQuanHuyen": "MLay",
+        "TenQuanHuyen": "Thị xã Mường Lay"
+      },
+      {
+        "MaQuanHuyen": "MNe",
+        "TenQuanHuyen": "Mường Nhé"
+      },
+      {
+        "MaQuanHuyen": "MCha",
+        "TenQuanHuyen": "Mường Chà"
+      },
+      {
+        "MaQuanHuyen": "TChua",
+        "TenQuanHuyen": "Tủa Chùa"
+      },
+      {
+        "MaQuanHuyen": "TGiao",
+        "TenQuanHuyen": "Tuần Giáo"
+      },
+      {
+        "MaQuanHuyen": "DB",
+        "TenQuanHuyen": "Huyện Điện Biên"
+      },
+      {
+        "MaQuanHuyen": "DBDong",
+        "TenQuanHuyen": "Điện Biên Đông"
+      },
+      {
+        "MaQuanHuyen": "MAng",
+        "TenQuanHuyen": "Mường Ảng"
+      },
+      {
+        "MaQuanHuyen": "NPo",
+        "TenQuanHuyen": "Nậm Pồ"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "LS",
+    "TenTinhTP": "Lạng Sơn",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "LS",
+        "TenQuanHuyen": "Thành phố Lạng Sơn"
+      },
+      {
+        "MaQuanHuyen": "TDin",
+        "TenQuanHuyen": "Tràng Định"
+      },
+      {
+        "MaQuanHuyen": "BGia",
+        "TenQuanHuyen": "Bình Gia"
+      },
+      {
+        "MaQuanHuyen": "VLang",
+        "TenQuanHuyen": "Văn Lãng"
+      },
+      {
+        "MaQuanHuyen": "CLoc",
+        "TenQuanHuyen": "Cao Lộc"
+      },
+      {
+        "MaQuanHuyen": "VQuan",
+        "TenQuanHuyen": "Văn Quan"
+      },
+      {
+        "MaQuanHuyen": "BSon",
+        "TenQuanHuyen": "Bắc Sơn"
+      },
+      {
+        "MaQuanHuyen": "HLung",
+        "TenQuanHuyen": "Hữu Lũng"
+      },
+      {
+        "MaQuanHuyen": "CLang",
+        "TenQuanHuyen": "Chi Lăng"
+      },
+      {
+        "MaQuanHuyen": "LBinh",
+        "TenQuanHuyen": "Lộc Bình"
+      },
+      {
+        "MaQuanHuyen": "DLap",
+        "TenQuanHuyen": "Đình Lập"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "SL",
+    "TenTinhTP": "Sơn La",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "SL",
+        "TenQuanHuyen": "Thành phố Sơn La"
+      },
+      {
+        "MaQuanHuyen": "MChau",
+        "TenQuanHuyen": "Thị xã Mộc Châu"
+      },
+      {
+        "MaQuanHuyen": "TChau",
+        "TenQuanHuyen": "Huyện Thuận Châu"
+      },
+      {
+        "MaQuanHuyen": "MSon",
+        "TenQuanHuyen": "Huyện Mai Sơn"
+      },
+      {
+        "MaQuanHuyen": "SMa",
+        "TenQuanHuyen": "Huyện Sông Mã"
+      },
+      {
+        "MaQuanHuyen": "PY",
+        "TenQuanHuyen": "Huyện Phù Yên"
+      },
+      {
+        "MaQuanHuyen": "MLa",
+        "TenQuanHuyen": "Huyện Mường La"
+      },
+      {
+        "MaQuanHuyen": "YChau",
+        "TenQuanHuyen": "Huyện Yên Châu"
+      },
+      {
+        "MaQuanHuyen": "BYen",
+        "TenQuanHuyen": "Huyện Bắc Yên"
+      },
+      {
+        "MaQuanHuyen": "QNhai",
+        "TenQuanHuyen": "Huyện Quỳnh Nhai"
+      },
+      {
+        "MaQuanHuyen": "VHo",
+        "TenQuanHuyen": "Huyện Vân Hồ"
+      },
+      {
+        "MaQuanHuyen": "SCop",
+        "TenQuanHuyen": "Huyện Sốp Cộp"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "PT",
+    "TenTinhTP": "Phú Thọ",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "VTri",
+        "TenQuanHuyen": "Thành phố Việt Trì"
+      },
+      {
+        "MaQuanHuyen": "PTho",
+        "TenQuanHuyen": "Thị xã Phú Thọ"
+      },
+      {
+        "MaQuanHuyen": "CKhe",
+        "TenQuanHuyen": "Huyện Cẩm Khê"
+      },
+      {
+        "MaQuanHuyen": "ThanhSon",
+        "TenQuanHuyen": "Huyện Thanh Sơn"
+      },
+      {
+        "MaQuanHuyen": "ThanhBa",
+        "TenQuanHuyen": "Huyện Thanh Ba"
+      },
+      {
+        "MaQuanHuyen": "DoanHung",
+        "TenQuanHuyen": "Huyện Đoan Hùng"
+      },
+      {
+        "MaQuanHuyen": "PNinh",
+        "TenQuanHuyen": "Huyện Phù Ninh"
+      },
+      {
+        "MaQuanHuyen": "LThao",
+        "TenQuanHuyen": "Huyện Lâm Thao"
+      },
+      {
+        "MaQuanHuyen": "HHoa",
+        "TenQuanHuyen": "Huyện Hạ Hòa"
+      },
+      {
+        "MaQuanHuyen": "YLap",
+        "TenQuanHuyen": "Huyện Yên Lập"
+      },
+      {
+        "MaQuanHuyen": "TamNong",
+        "TenQuanHuyen": "Huyện Tam Nông"
+      },
+      {
+        "MaQuanHuyen": "TanSon",
+        "TenQuanHuyen": "Huyện Tân Sơn"
+      },
+      {
+        "MaQuanHuyen": "ThanhThuy",
+        "TenQuanHuyen": "Huyện Thanh Thủy"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "BN",
+    "TenTinhTP": "Bắc Ninh",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "BNinh",
+        "TenQuanHuyen": "Thành phố Bắc Ninh"
+      },
+      {
+        "MaQuanHuyen": "QueVo",
+        "TenQuanHuyen": "Thị xã Quế Võ"
+      },
+      {
+        "MaQuanHuyen": "ThuanThanh",
+        "TenQuanHuyen": "Thị xã Thuận Thành"
+      },
+      {
+        "MaQuanHuyen": "TienDu",
+        "TenQuanHuyen": "Huyện Tiên Du"
+      },
+      {
+        "MaQuanHuyen": "TuSon",
+        "TenQuanHuyen": "Thành phố Từ Sơn"
+      },
+      {
+        "MaQuanHuyen": "YenPhong",
+        "TenQuanHuyen": "Huyện Yên Phong"
+      },
+      {
+        "MaQuanHuyen": "GiaBinh",
+        "TenQuanHuyen": "Huyện Gia Bình"
+      },
+      {
+        "MaQuanHuyen": "LuongTai",
+        "TenQuanHuyen": "Huyện Lương Tài"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "QNinh",
+    "TenTinhTP": "Quảng Ninh",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "HLong",
+        "TenQuanHuyen": "Thành phố Hạ Long"
+      },
+      {
+        "MaQuanHuyen": "CMau",
+        "TenQuanHuyen": "Thành phố Cẩm Phả"
+      },
+      {
+        "MaQuanHuyen": "UMinh",
+        "TenQuanHuyen": "Thành phố Uông Bí"
+      },
+      {
+        "MaQuanHuyen": "MongCai",
+        "TenQuanHuyen": "Thành phố Móng Cái"
+      },
+      {
+        "MaQuanHuyen": "BQ",
+        "TenQuanHuyen": "Thị xã Đông Triều"
+      },
+      {
+        "MaQuanHuyen": "QuangYen",
+        "TenQuanHuyen": "Thị xã Quảng Yên"
+      },
+      {
+        "MaQuanHuyen": "VanDon",
+        "TenQuanHuyen": "Huyện Vân Đồn"
+      },
+      {
+        "MaQuanHuyen": "TienYen",
+        "TenQuanHuyen": "Huyện Tiên Yên"
+      },
+      {
+        "MaQuanHuyen": "BaChe",
+        "TenQuanHuyen": "Huyện Ba Chẽ"
+      },
+      {
+        "MaQuanHuyen": "BinhLieu",
+        "TenQuanHuyen": "Huyện Bình Liêu"
+      },
+      {
+        "MaQuanHuyen": "CoTo",
+        "TenQuanHuyen": "Huyện Cô Tô"
+      },
+      {
+        "MaQuanHuyen": "HaiHa",
+        "TenQuanHuyen": "Huyện Hải Hà"
+      },
+      {
+        "MaQuanHuyen": "DamHa",
+        "TenQuanHuyen": "Huyện Đầm Hà"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "HN",
+    "TenTinhTP": "TP. Hà Nội",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "HK",
+        "TenQuanHuyen": "Quận Hoàn Kiếm"
+      },
+      {
+        "MaQuanHuyen": "BD",
+        "TenQuanHuyen": "Quận Ba Đình"
+      },
+      {
+        "MaQuanHuyen": "CG",
+        "TenQuanHuyen": "Quận Cầu Giấy"
+      },
+      {
+        "MaQuanHuyen": "DH",
+        "TenQuanHuyen": "Quận Đống Đa"
+      },
+      {
+        "MaQuanHuyen": "HKiem",
+        "TenQuanHuyen": "Quận Hai Bà Trưng"
+      },
+      {
+        "MaQuanHuyen": "HMai",
+        "TenQuanHuyen": "Quận Hoàng Mai"
+      },
+      {
+        "MaQuanHuyen": "LB",
+        "TenQuanHuyen": "Quận Long Biên"
+      },
+      {
+        "MaQuanHuyen": "TB",
+        "TenQuanHuyen": "Quận Tây Hồ"
+      },
+      {
+        "MaQuanHuyen": "TX",
+        "TenQuanHuyen": "Quận Thanh Xuân"
+      },
+      {
+        "MaQuanHuyen": "BT",
+        "TenQuanHuyen": "Quận Bắc Từ Liêm"
+      },
+      {
+        "MaQuanHuyen": "NTL",
+        "TenQuanHuyen": "Quận Nam Từ Liêm"
+      },
+      {
+        "MaQuanHuyen": "HAD",
+        "TenQuanHuyen": "Huyện Hoài Đức"
+      },
+      {
+        "MaQuanHuyen": "TL",
+        "TenQuanHuyen": "Huyện Thanh Trì"
+      },
+      {
+        "MaQuanHuyen": "DN",
+        "TenQuanHuyen": "Huyện Đông Anh"
+      },
+      {
+        "MaQuanHuyen": "SC",
+        "TenQuanHuyen": "Huyện Sóc Sơn"
+      },
+      {
+        "MaQuanHuyen": "GM",
+        "TenQuanHuyen": "Huyện Gia Lâm"
+      },
+      {
+        "MaQuanHuyen": "MH",
+        "TenQuanHuyen": "Huyện Mê Linh"
+      },
+      {
+        "MaQuanHuyen": "TH",
+        "TenQuanHuyen": "Huyện Thường Tín"
+      },
+      {
+        "MaQuanHuyen": "PT",
+        "TenQuanHuyen": "Huyện Phúc Thọ"
+      },
+      {
+        "MaQuanHuyen": "CH",
+        "TenQuanHuyen": "Huyện Chương Mỹ"
+      },
+      {
+        "MaQuanHuyen": "THY",
+        "TenQuanHuyen": "Huyện Thanh Oai"
+      },
+      {
+        "MaQuanHuyen": "MY",
+        "TenQuanHuyen": "Huyện Mỹ Đức"
+      },
+      {
+        "MaQuanHuyen": "UD",
+        "TenQuanHuyen": "Huyện Ứng Hòa"
+      },
+      {
+        "MaQuanHuyen": "QD",
+        "TenQuanHuyen": "Huyện Quốc Oai"
+      },
+      {
+        "MaQuanHuyen": "DNai",
+        "TenQuanHuyen": "Thị xã Sơn Tây"
+      },
+      {
+        "MaQuanHuyen": "BTL",
+        "TenQuanHuyen": "Huyện Ba Vì"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "HP",
+    "TenTinhTP": "TP. Hải Phòng",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "HB",
+        "TenQuanHuyen": "Quận Hồng Bàng"
+      },
+      {
+        "MaQuanHuyen": "NQ",
+        "TenQuanHuyen": "Quận Ngô Quyền"
+      },
+      {
+        "MaQuanHuyen": "LC",
+        "TenQuanHuyen": "Quận Lê Chân"
+      },
+      {
+        "MaQuanHuyen": "KAn",
+        "TenQuanHuyen": "Quận Kiến An"
+      },
+      {
+        "MaQuanHuyen": "HPD",
+        "TenQuanHuyen": "Quận Hải An"
+      },
+      {
+        "MaQuanHuyen": "DHV",
+        "TenQuanHuyen": "Quận Dương Kinh"
+      },
+      {
+        "MaQuanHuyen": "DL",
+        "TenQuanHuyen": "Quận Đồ Sơn"
+      },
+      {
+        "MaQuanHuyen": "ThuyNguyen",
+        "TenQuanHuyen": "Huyện Thủy Nguyên"
+      },
+      {
+        "MaQuanHuyen": "AnDuong",
+        "TenQuanHuyen": "Huyện An Dương"
+      },
+      {
+        "MaQuanHuyen": "AnLao",
+        "TenQuanHuyen": "Huyện An Lão"
+      },
+      {
+        "MaQuanHuyen": "TienLang",
+        "TenQuanHuyen": "Huyện Tiên Lãng"
+      },
+      {
+        "MaQuanHuyen": "VinhBao",
+        "TenQuanHuyen": "Huyện Vĩnh Bảo"
+      },
+      {
+        "MaQuanHuyen": "CatHai",
+        "TenQuanHuyen": "Huyện Cát Hải"
+      },
+      {
+        "MaQuanHuyen": "BachLongVy",
+        "TenQuanHuyen": "Huyện Bạch Long Vĩ"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "HY",
+    "TenTinhTP": "Hưng Yên",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "HY",
+        "TenQuanHuyen": "Thành phố Hưng Yên"
+      },
+      {
+        "MaQuanHuyen": "VBan",
+        "TenQuanHuyen": "Thị xã Mỹ Hào"
+      },
+      {
+        "MaQuanHuyen": "KimDong",
+        "TenQuanHuyen": "Huyện Kim Động"
+      },
+      {
+        "MaQuanHuyen": "TienLu",
+        "TenQuanHuyen": "Huyện Tiên Lữ"
+      },
+      {
+        "MaQuanHuyen": "PhuCu",
+        "TenQuanHuyen": "Huyện Phù Cừ"
+      },
+      {
+        "MaQuanHuyen": "VanLam",
+        "TenQuanHuyen": "Huyện Văn Lâm"
+      },
+      {
+        "MaQuanHuyen": "VanGiang",
+        "TenQuanHuyen": "Huyện Văn Giang"
+      },
+      {
+        "MaQuanHuyen": "YenMy",
+        "TenQuanHuyen": "Huyện Yên Mỹ"
+      },
+      {
+        "MaQuanHuyen": "KhoaiChau",
+        "TenQuanHuyen": "Huyện Khoái Châu"
+      },
+      {
+        "MaQuanHuyen": "AnThi",
+        "TenQuanHuyen": "Huyện Ân Thi"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "NB",
+    "TenTinhTP": "Ninh Bình",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "NB",
+        "TenQuanHuyen": "Thành phố Ninh Bình"
+      },
+      {
+        "MaQuanHuyen": "TamDiep",
+        "TenQuanHuyen": "Thành phố Tam Điệp"
+      },
+      {
+        "MaQuanHuyen": "HoaLu",
+        "TenQuanHuyen": "Huyện Hoa Lư"
+      },
+      {
+        "MaQuanHuyen": "GiaVien",
+        "TenQuanHuyen": "Huyện Gia Viễn"
+      },
+      {
+        "MaQuanHuyen": "YenMo",
+        "TenQuanHuyen": "Huyện Yên Mô"
+      },
+      {
+        "MaQuanHuyen": "KimSon",
+        "TenQuanHuyen": "Huyện Kim Sơn"
+      },
+      {
+        "MaQuanHuyen": "NhoQuan",
+        "TenQuanHuyen": "Huyện Nho Quan"
+      },
+      {
+        "MaQuanHuyen": "YenKhanh",
+        "TenQuanHuyen": "Huyện Yên Khánh"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "TH",
+    "TenTinhTP": "Thanh Hóa",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "TPTHoa",
+        "TenQuanHuyen": "TP. Thanh Hóa"
+      },
+      {
+        "MaQuanHuyen": "TSon",
+        "TenQuanHuyen": "TX. Sầm Sơn"
+      },
+      {
+        "MaQuanHuyen": "BHoa",
+        "TenQuanHuyen": "TX. Bỉm Sơn"
+      },
+      {
+        "MaQuanHuyen": "MHoa",
+        "TenQuanHuyen": "Mường Lát"
+      },
+      {
+        "MaQuanHuyen": "QLoc",
+        "TenQuanHuyen": "Quan Hóa"
+      },
+      {
+        "MaQuanHuyen": "BLac",
+        "TenQuanHuyen": "Bá Thước"
+      },
+      {
+        "MaQuanHuyen": "QSon",
+        "TenQuanHuyen": "Quan Sơn"
+      },
+      {
+        "MaQuanHuyen": "LXuan",
+        "TenQuanHuyen": "Lang Chánh"
+      },
+      {
+        "MaQuanHuyen": "NSon",
+        "TenQuanHuyen": "Ngọc Lặc"
+      },
+      {
+        "MaQuanHuyen": "CLoc",
+        "TenQuanHuyen": "Cẩm Thủy"
+      },
+      {
+        "MaQuanHuyen": "TXuan",
+        "TenQuanHuyen": "Thạch Thành"
+      },
+      {
+        "MaQuanHuyen": "HTinh",
+        "TenQuanHuyen": "Hà Trung"
+      },
+      {
+        "MaQuanHuyen": "VLoc",
+        "TenQuanHuyen": "Vĩnh Lộc"
+      },
+      {
+        "MaQuanHuyen": "YDinh",
+        "TenQuanHuyen": "Yên Định"
+      },
+      {
+        "MaQuanHuyen": "THoa",
+        "TenQuanHuyen": "Thọ Xuân"
+      },
+      {
+        "MaQuanHuyen": "TThuan",
+        "TenQuanHuyen": "Thường Xuân"
+      },
+      {
+        "MaQuanHuyen": "TThanh",
+        "TenQuanHuyen": "Triệu Sơn"
+      },
+      {
+        "MaQuanHuyen": "THieu",
+        "TenQuanHuyen": "Thiệu Hóa"
+      },
+      {
+        "MaQuanHuyen": "HHoa",
+        "TenQuanHuyen": "Hoằng Hóa"
+      },
+      {
+        "MaQuanHuyen": "HXuan",
+        "TenQuanHuyen": "Hậu Lộc"
+      },
+      {
+        "MaQuanHuyen": "GAn",
+        "TenQuanHuyen": "Nga Sơn"
+      },
+      {
+        "MaQuanHuyen": "NXuan",
+        "TenQuanHuyen": "Như Xuân"
+      },
+      {
+        "MaQuanHuyen": "NThanh",
+        "TenQuanHuyen": "Như Thanh"
+      },
+      {
+        "MaQuanHuyen": "NHoa",
+        "TenQuanHuyen": "Nông Cống"
+      },
+      {
+        "MaQuanHuyen": "ĐSon",
+        "TenQuanHuyen": "Đông Sơn"
+      },
+      {
+        "MaQuanHuyen": "QHoa",
+        "TenQuanHuyen": "Quảng Xương"
+      },
+      {
+        "MaQuanHuyen": "TTinh",
+        "TenQuanHuyen": "Tĩnh Gia"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "NA",
+    "TenTinhTP": "Nghệ An",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "TPVinh",
+        "TenQuanHuyen": "TP. Vinh"
+      },
+      {
+        "MaQuanHuyen": "TCua",
+        "TenQuanHuyen": "TX. Cửa Lò"
+      },
+      {
+        "MaQuanHuyen": "TThi",
+        "TenQuanHuyen": "TX. Thái Hòa"
+      },
+      {
+        "MaQuanHuyen": "KSon",
+        "TenQuanHuyen": "Kỳ Sơn"
+      },
+      {
+        "MaQuanHuyen": "TChau",
+        "TenQuanHuyen": "Tương Dương"
+      },
+      {
+        "MaQuanHuyen": "NChanh",
+        "TenQuanHuyen": "Nghĩa Đàn"
+      },
+      {
+        "MaQuanHuyen": "QHop",
+        "TenQuanHuyen": "Quỳ Hợp"
+      },
+      {
+        "MaQuanHuyen": "QChau",
+        "TenQuanHuyen": "Quỳ Châu"
+      },
+      {
+        "MaQuanHuyen": "KLuong",
+        "TenQuanHuyen": "Kỳ Sơn"
+      },
+      {
+        "MaQuanHuyen": "TChanh",
+        "TenQuanHuyen": "Tân Kỳ"
+      },
+      {
+        "MaQuanHuyen": "ASon",
+        "TenQuanHuyen": "Anh Sơn"
+      },
+      {
+        "MaQuanHuyen": "DCuong",
+        "TenQuanHuyen": "Diễn Châu"
+      },
+      {
+        "MaQuanHuyen": "YThanh",
+        "TenQuanHuyen": "Yên Thành"
+      },
+      {
+        "MaQuanHuyen": "DHoa",
+        "TenQuanHuyen": "Đô Lương"
+      },
+      {
+        "MaQuanHuyen": "TThanh",
+        "TenQuanHuyen": "Thanh Chương"
+      },
+      {
+        "MaQuanHuyen": "NSon",
+        "TenQuanHuyen": "Nam Đàn"
+      },
+      {
+        "MaQuanHuyen": "HLuong",
+        "TenQuanHuyen": "Hưng Nguyên"
+      },
+      {
+        "MaQuanHuyen": "QDinh",
+        "TenQuanHuyen": "Quỳnh Lưu"
+      },
+      {
+        "MaQuanHuyen": "HSon",
+        "TenQuanHuyen": "Hoàng Mai"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "HT",
+    "TenTinhTP": "Hà Tĩnh",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "TPHTinh",
+        "TenQuanHuyen": "TP. Hà Tĩnh"
+      },
+      {
+        "MaQuanHuyen": "TKy",
+        "TenQuanHuyen": "TX. Hồng Lĩnh"
+      },
+      {
+        "MaQuanHuyen": "HTrung",
+        "TenQuanHuyen": "Hương Sơn"
+      },
+      {
+        "MaQuanHuyen": "ĐXuyen",
+        "TenQuanHuyen": "Đức Thọ"
+      },
+      {
+        "MaQuanHuyen": "VLinh",
+        "TenQuanHuyen": "Vũ Quang"
+      },
+      {
+        "MaQuanHuyen": "NKan",
+        "TenQuanHuyen": "Nghi Xuân"
+      },
+      {
+        "MaQuanHuyen": "CPhan",
+        "TenQuanHuyen": "Can Lộc"
+      },
+      {
+        "MaQuanHuyen": "HTinh",
+        "TenQuanHuyen": "Hương Khê"
+      },
+      {
+        "MaQuanHuyen": "TLoc",
+        "TenQuanHuyen": "Thạch Hà"
+      },
+      {
+        "MaQuanHuyen": "CLoc",
+        "TenQuanHuyen": "Cẩm Xuyên"
+      },
+      {
+        "MaQuanHuyen": "KAnh",
+        "TenQuanHuyen": "Kỳ Anh"
+      },
+      {
+        "MaQuanHuyen": "LHa",
+        "TenQuanHuyen": "Lộc Hà"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "QT",
+    "TenTinhTP": "Quảng Trị",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "TPQTri",
+        "TenQuanHuyen": "TP. Đông Hà"
+      },
+      {
+        "MaQuanHuyen": "TQTri",
+        "TenQuanHuyen": "TX. Quảng Trị"
+      },
+      {
+        "MaQuanHuyen": "VLinh",
+        "TenQuanHuyen": "Vĩnh Linh"
+      },
+      {
+        "MaQuanHuyen": "HHoa",
+        "TenQuanHuyen": "Hướng Hóa"
+      },
+      {
+        "MaQuanHuyen": "ĐKrong",
+        "TenQuanHuyen": "Đakrông"
+      },
+      {
+        "MaQuanHuyen": "CCo",
+        "TenQuanHuyen": "Cam Lộ"
+      },
+      {
+        "MaQuanHuyen": "TThien",
+        "TenQuanHuyen": "Triệu Phong"
+      },
+      {
+        "MaQuanHuyen": "HNinh",
+        "TenQuanHuyen": "Hải Lăng"
+      },
+      {
+        "MaQuanHuyen": "GLinh",
+        "TenQuanHuyen": "Gio Linh"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "HU",
+    "TenTinhTP": "TP. Huế",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "TPHue",
+        "TenQuanHuyen": "TP. Huế"
+      },
+      {
+        "MaQuanHuyen": "PLuong",
+        "TenQuanHuyen": "Phong Điền"
+      },
+      {
+        "MaQuanHuyen": "QDien",
+        "TenQuanHuyen": "Quảng Điền"
+      },
+      {
+        "MaQuanHuyen": "PVang",
+        "TenQuanHuyen": "Phú Vang"
+      },
+      {
+        "MaQuanHuyen": "HThuan",
+        "TenQuanHuyen": "Hương Thủy"
+      },
+      {
+        "MaQuanHuyen": "HTra",
+        "TenQuanHuyen": "Hương Trà"
+      },
+      {
+        "MaQuanHuyen": "ALuoi",
+        "TenQuanHuyen": "A Lưới"
+      },
+      {
+        "MaQuanHuyen": "NThuan",
+        "TenQuanHuyen": "Nam Đông"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "DNang",
+    "TenTinhTP": "TP. Đà Nẵng",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "HC",
+        "TenQuanHuyen": "Quận Hải Châu"
+      },
+      {
+        "MaQuanHuyen": "TKhe",
+        "TenQuanHuyen": "Quận Thanh Khê"
+      },
+      {
+        "MaQuanHuyen": "STra",
+        "TenQuanHuyen": "Quận Sơn Trà"
+      },
+      {
+        "MaQuanHuyen": "NHSon",
+        "TenQuanHuyen": "Quận Ngũ Hành Sơn"
+      },
+      {
+        "MaQuanHuyen": "LCieu",
+        "TenQuanHuyen": "Quận Liên Chiểu"
+      },
+      {
+        "MaQuanHuyen": "CLe",
+        "TenQuanHuyen": "Quận Cẩm Lệ"
+      },
+      {
+        "MaQuanHuyen": "HVang",
+        "TenQuanHuyen": "Huyện Hòa Vang"
+      },
+      {
+        "MaQuanHuyen": "HSa",
+        "TenQuanHuyen": "Huyện Hoàng Sa"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "QNga",
+    "TenTinhTP": "Quảng Ngãi",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "TQNgai",
+        "TenQuanHuyen": "TP. Quảng Ngãi"
+      },
+      {
+        "MaQuanHuyen": "BSon",
+        "TenQuanHuyen": "Huyện Bình Sơn"
+      },
+      {
+        "MaQuanHuyen": "DPho",
+        "TenQuanHuyen": "Thị xã Đức Phổ"
+      },
+      {
+        "MaQuanHuyen": "MDuc",
+        "TenQuanHuyen": "Huyện Mộ Đức"
+      },
+      {
+        "MaQuanHuyen": "NHanh",
+        "TenQuanHuyen": "Huyện Nghĩa Hành"
+      },
+      {
+        "MaQuanHuyen": "SHa",
+        "TenQuanHuyen": "Huyện Sơn Hà"
+      },
+      {
+        "MaQuanHuyen": "STay",
+        "TenQuanHuyen": "Huyện Sơn Tây"
+      },
+      {
+        "MaQuanHuyen": "STinh",
+        "TenQuanHuyen": "Huyện Sơn Tịnh"
+      },
+      {
+        "MaQuanHuyen": "TNghia",
+        "TenQuanHuyen": "Huyện Tư Nghĩa"
+      },
+      {
+        "MaQuanHuyen": "TBong",
+        "TenQuanHuyen": "Huyện Trà Bồng"
+      },
+      {
+        "MaQuanHuyen": "BTo",
+        "TenQuanHuyen": "Huyện Ba Tơ"
+      },
+      {
+        "MaQuanHuyen": "MLong",
+        "TenQuanHuyen": "Huyện Minh Long"
+      },
+      {
+        "MaQuanHuyen": "LSon",
+        "TenQuanHuyen": "Huyện Lý Sơn"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "GL",
+    "TenTinhTP": "Gia Lai",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "TPleiku",
+        "TenQuanHuyen": "TP. Pleiku"
+      },
+      {
+        "MaQuanHuyen": "AKe",
+        "TenQuanHuyen": "Thị xã An Khê"
+      },
+      {
+        "MaQuanHuyen": "AyunPa",
+        "TenQuanHuyen": "Thị xã Ayun Pa"
+      },
+      {
+        "MaQuanHuyen": "CPah",
+        "TenQuanHuyen": "Huyện Chư Păh"
+      },
+      {
+        "MaQuanHuyen": "CPong",
+        "TenQuanHuyen": "Huyện Chư Prông"
+      },
+      {
+        "MaQuanHuyen": "CSe",
+        "TenQuanHuyen": "Huyện Chư Sê"
+      },
+      {
+        "MaQuanHuyen": "DakDoa",
+        "TenQuanHuyen": "Huyện Đak Đoa"
+      },
+      {
+        "MaQuanHuyen": "DakPo",
+        "TenQuanHuyen": "Huyện Đak Pơ"
+      },
+      {
+        "MaQuanHuyen": "DucCo",
+        "TenQuanHuyen": "Huyện Đức Cơ"
+      },
+      {
+        "MaQuanHuyen": "IaGrai",
+        "TenQuanHuyen": "Huyện Ia Grai"
+      },
+      {
+        "MaQuanHuyen": "IaPa",
+        "TenQuanHuyen": "Huyện Ia Pa"
+      },
+      {
+        "MaQuanHuyen": "KBang",
+        "TenQuanHuyen": "Huyện KBang"
+      },
+      {
+        "MaQuanHuyen": "KongChro",
+        "TenQuanHuyen": "Huyện Kông Chro"
+      },
+      {
+        "MaQuanHuyen": "KrongPa",
+        "TenQuanHuyen": "Huyện Krông Pa"
+      },
+      {
+        "MaQuanHuyen": "MangYang",
+        "TenQuanHuyen": "Huyện Mang Yang"
+      },
+      {
+        "MaQuanHuyen": "PhuThien",
+        "TenQuanHuyen": "Huyện Phú Thiện"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "DL",
+    "TenTinhTP": "Đắk Lắk",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "BMT",
+        "TenQuanHuyen": "TP. Buôn Ma Thuột"
+      },
+      {
+        "MaQuanHuyen": "BHo",
+        "TenQuanHuyen": "Thị xã Buôn Hồ"
+      },
+      {
+        "MaQuanHuyen": "EHleo",
+        "TenQuanHuyen": "Huyện Ea H'leo"
+      },
+      {
+        "MaQuanHuyen": "KNang",
+        "TenQuanHuyen": "Huyện Krông Năng"
+      },
+      {
+        "MaQuanHuyen": "KBuk",
+        "TenQuanHuyen": "Huyện Krông Búk"
+      },
+      {
+        "MaQuanHuyen": "KPac",
+        "TenQuanHuyen": "Huyện Krông Pắc"
+      },
+      {
+        "MaQuanHuyen": "CMgar",
+        "TenQuanHuyen": "Huyện Cư M'gar"
+      },
+      {
+        "MaQuanHuyen": "EKar",
+        "TenQuanHuyen": "Huyện Ea Kar"
+      },
+      {
+        "MaQuanHuyen": "MDrac",
+        "TenQuanHuyen": "Huyện M'Drắk"
+      },
+      {
+        "MaQuanHuyen": "KBong",
+        "TenQuanHuyen": "Huyện Krông Bông"
+      },
+      {
+        "MaQuanHuyen": "Lak",
+        "TenQuanHuyen": "Huyện Lắk"
+      },
+      {
+        "MaQuanHuyen": "BD",
+        "TenQuanHuyen": "Huyện Buôn Đôn"
+      },
+      {
+        "MaQuanHuyen": "ESup",
+        "TenQuanHuyen": "Huyện Ea Súp"
+      },
+      {
+        "MaQuanHuyen": "CKuin",
+        "TenQuanHuyen": "Huyện Cư Kuin"
+      },
+      {
+        "MaQuanHuyen": "KAna",
+        "TenQuanHuyen": "Huyện Krông Ana"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "KH",
+    "TenTinhTP": "Khánh Hòa",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "NT",
+        "TenQuanHuyen": "TP. Nha Trang"
+      },
+      {
+        "MaQuanHuyen": "CRanh",
+        "TenQuanHuyen": "TP. Cam Ranh"
+      },
+      {
+        "MaQuanHuyen": "NH",
+        "TenQuanHuyen": "Thị xã Ninh Hòa"
+      },
+      {
+        "MaQuanHuyen": "DKhanh",
+        "TenQuanHuyen": "Huyện Diên Khánh"
+      },
+      {
+        "MaQuanHuyen": "KVinh",
+        "TenQuanHuyen": "Huyện Khánh Vĩnh"
+      },
+      {
+        "MaQuanHuyen": "KSon",
+        "TenQuanHuyen": "Huyện Khánh Sơn"
+      },
+      {
+        "MaQuanHuyen": "TSa",
+        "TenQuanHuyen": "Huyện Trường Sa"
+      },
+      {
+        "MaQuanHuyen": "CLam",
+        "TenQuanHuyen": "Huyện Cam Lâm"
+      },
+      {
+        "MaQuanHuyen": "VNinh",
+        "TenQuanHuyen": "Huyện Vạn Ninh"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "LD",
+    "TenTinhTP": "Lâm Đồng",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "TPDLat",
+        "TenQuanHuyen": "TP. Đà Lạt"
+      },
+      {
+        "MaQuanHuyen": "TBLoc",
+        "TenQuanHuyen": "TX. Bảo Lộc"
+      },
+      {
+        "MaQuanHuyen": "LDuong",
+        "TenQuanHuyen": "Lâm Hà"
+      },
+      {
+        "MaQuanHuyen": "LHa",
+        "TenQuanHuyen": "Lạc Dương"
+      },
+      {
+        "MaQuanHuyen": "DTeh",
+        "TenQuanHuyen": "Đơn Dương"
+      },
+      {
+        "MaQuanHuyen": "DucTrong",
+        "TenQuanHuyen": "Đức Trọng"
+      },
+      {
+        "MaQuanHuyen": "DHa",
+        "TenQuanHuyen": "Đam Rông"
+      },
+      {
+        "MaQuanHuyen": "CatTien",
+        "TenQuanHuyen": "Cát Tiên"
+      },
+      {
+        "MaQuanHuyen": "BLoc",
+        "TenQuanHuyen": "Bảo Lâm"
+      },
+      {
+        "MaQuanHuyen": "DaNhim",
+        "TenQuanHuyen": "Đạ Huoai"
+      },
+      {
+        "MaQuanHuyen": "DTeh2",
+        "TenQuanHuyen": "Đạ Tẻh"
+      },
+      {
+        "MaQuanHuyen": "DiLinh",
+        "TenQuanHuyen": "Di Linh"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "DNai",
+    "TenTinhTP": "Đồng Nai",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "TPBien",
+        "TenQuanHuyen": "TP. Biên Hòa"
+      },
+      {
+        "MaQuanHuyen": "TLKhanh",
+        "TenQuanHuyen": "TX. Long Khánh"
+      },
+      {
+        "MaQuanHuyen": "LThanh",
+        "TenQuanHuyen": "Long Thành"
+      },
+      {
+        "MaQuanHuyen": "NHa",
+        "TenQuanHuyen": "Nhon Trạch"
+      },
+      {
+        "MaQuanHuyen": "VCoong",
+        "TenQuanHuyen": "Vĩnh Cửu"
+      },
+      {
+        "MaQuanHuyen": "TPhong",
+        "TenQuanHuyen": "Trảng Bom"
+      },
+      {
+        "MaQuanHuyen": "XLoc",
+        "TenQuanHuyen": "Xuân Lộc"
+      },
+      {
+        "MaQuanHuyen": "DXuyen",
+        "TenQuanHuyen": "Định Quán"
+      },
+      {
+        "MaQuanHuyen": "TanPhu",
+        "TenQuanHuyen": "Tân Phú"
+      },
+      {
+        "MaQuanHuyen": "CamMy",
+        "TenQuanHuyen": "Cẩm Mỹ"
+      },
+      {
+        "MaQuanHuyen": "LongKhanh",
+        "TenQuanHuyen": "Thống Nhất"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "TNinh",
+    "TenTinhTP": "Tây Ninh",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "TPTNinh",
+        "TenQuanHuyen": "TP. Tây Ninh"
+      },
+      {
+        "MaQuanHuyen": "THoa",
+        "TenQuanHuyen": "Tân Biên"
+      },
+      {
+        "MaQuanHuyen": "TChau",
+        "TenQuanHuyen": "Tân Châu"
+      },
+      {
+        "MaQuanHuyen": "DuongMinh",
+        "TenQuanHuyen": "Dương Minh Châu"
+      },
+      {
+        "MaQuanHuyen": "ChauThanh",
+        "TenQuanHuyen": "Châu Thành"
+      },
+      {
+        "MaQuanHuyen": "HoaMon",
+        "TenQuanHuyen": "Hòa Thành"
+      },
+      {
+        "MaQuanHuyen": "GoiDau",
+        "TenQuanHuyen": "Gò Dầu"
+      },
+      {
+        "MaQuanHuyen": "BenCau",
+        "TenQuanHuyen": "Bến Cầu"
+      },
+      {
+        "MaQuanHuyen": "TranhBien",
+        "TenQuanHuyen": "Trảng Bàng"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "HCM",
+    "TenTinhTP": "TP. Hồ Chí Minh",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "Q1",
+        "TenQuanHuyen": "Quận 1"
+      },
+      {
+        "MaQuanHuyen": "Q2",
+        "TenQuanHuyen": "Quận 2"
+      },
+      {
+        "MaQuanHuyen": "Q3",
+        "TenQuanHuyen": "Quận 3"
+      },
+      {
+        "MaQuanHuyen": "Q4",
+        "TenQuanHuyen": "Quận 4"
+      },
+      {
+        "MaQuanHuyen": "Q5",
+        "TenQuanHuyen": "Quận 5"
+      },
+      {
+        "MaQuanHuyen": "Q6",
+        "TenQuanHuyen": "Quận 6"
+      },
+      {
+        "MaQuanHuyen": "Q7",
+        "TenQuanHuyen": "Quận 7"
+      },
+      {
+        "MaQuanHuyen": "Q8",
+        "TenQuanHuyen": "Quận 8"
+      },
+      {
+        "MaQuanHuyen": "Q9",
+        "TenQuanHuyen": "Quận 9"
+      },
+      {
+        "MaQuanHuyen": "Q10",
+        "TenQuanHuyen": "Quận 10"
+      },
+      {
+        "MaQuanHuyen": "Q11",
+        "TenQuanHuyen": "Quận 11"
+      },
+      {
+        "MaQuanHuyen": "Q12",
+        "TenQuanHuyen": "Quận 12"
+      },
+      {
+        "MaQuanHuyen": "QBT",
+        "TenQuanHuyen": "Quận Bình Tân"
+      },
+      {
+        "MaQuanHuyen": "QBThanh",
+        "TenQuanHuyen": "Quận Bình Thạnh"
+      },
+      {
+        "MaQuanHuyen": "QGV",
+        "TenQuanHuyen": "Quận Gò Vấp"
+      },
+      {
+        "MaQuanHuyen": "QPNuan",
+        "TenQuanHuyen": "Quận Phú Nhuận"
+      },
+      {
+        "MaQuanHuyen": "QTBinh",
+        "TenQuanHuyen": "Quận Tân Bình"
+      },
+      {
+        "MaQuanHuyen": "QTPhu",
+        "TenQuanHuyen": "Quận Tân Phú"
+      },
+      {
+        "MaQuanHuyen": "QTDuc",
+        "TenQuanHuyen": "Quận Thủ Đức"
+      },
+      {
+        "MaQuanHuyen": "HBChanh",
+        "TenQuanHuyen": "H. Bình Chánh"
+      },
+      {
+        "MaQuanHuyen": "HCanGio",
+        "TenQuanHuyen": "H. Cần Giờ"
+      },
+      {
+        "MaQuanHuyen": "HCuChi",
+        "TenQuanHuyen": "H. Củ Chi"
+      },
+      {
+        "MaQuanHuyen": "HHMon",
+        "TenQuanHuyen": "H. Hóc Môn"
+      },
+      {
+        "MaQuanHuyen": "HNBinh",
+        "TenQuanHuyen": "H. Nhà Bè"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "DT",
+    "TenTinhTP": "Đồng Tháp",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "TPCao",
+        "TenQuanHuyen": "TP. Cao Lãnh"
+      },
+      {
+        "MaQuanHuyen": "TSaDec",
+        "TenQuanHuyen": "TP. Sa Đéc"
+      },
+      {
+        "MaQuanHuyen": "THong",
+        "TenQuanHuyen": "TX. Hồng Ngự"
+      },
+      {
+        "MaQuanHuyen": "TanHong",
+        "TenQuanHuyen": "Tân Hồng"
+      },
+      {
+        "MaQuanHuyen": "HongNgu",
+        "TenQuanHuyen": "Hồng Ngự"
+      },
+      {
+        "MaQuanHuyen": "TamNong",
+        "TenQuanHuyen": "Tam Nông"
+      },
+      {
+        "MaQuanHuyen": "ThanhBinh",
+        "TenQuanHuyen": "Thanh Bình"
+      },
+      {
+        "MaQuanHuyen": "LaiVung",
+        "TenQuanHuyen": "Lai Vung"
+      },
+      {
+        "MaQuanHuyen": "CaoLinh",
+        "TenQuanHuyen": "Cao Lãnh"
+      },
+      {
+        "MaQuanHuyen": "ThapMuoi",
+        "TenQuanHuyen": "Tháp Mười"
+      },
+      {
+        "MaQuanHuyen": "ChauThanh2",
+        "TenQuanHuyen": "Châu Thành"
+      },
+      {
+        "MaQuanHuyen": "LapVo",
+        "TenQuanHuyen": "Lấp Vò"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "AG",
+    "TenTinhTP": "An Giang",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "TPLXuyen",
+        "TenQuanHuyen": "TP. Long Xuyên"
+      },
+      {
+        "MaQuanHuyen": "TPChau",
+        "TenQuanHuyen": "TP. Châu Đốc"
+      },
+      {
+        "MaQuanHuyen": "TTrang",
+        "TenQuanHuyen": "TX. Tân Châu"
+      },
+      {
+        "MaQuanHuyen": "AnPhu",
+        "TenQuanHuyen": "An Phú"
+      },
+      {
+        "MaQuanHuyen": "TBinh",
+        "TenQuanHuyen": "Tân Binh"
+      },
+      {
+        "MaQuanHuyen": "PhuTan",
+        "TenQuanHuyen": "Phú Tân"
+      },
+      {
+        "MaQuanHuyen": "ChauPhu",
+        "TenQuanHuyen": "Châu Phú"
+      },
+      {
+        "MaQuanHuyen": "TinhBien",
+        "TenQuanHuyen": "Tịnh Biên"
+      },
+      {
+        "MaQuanHuyen": "TriTon",
+        "TenQuanHuyen": "Tri Tôn"
+      },
+      {
+        "MaQuanHuyen": "ChauThanh3",
+        "TenQuanHuyen": "Châu Thành"
+      },
+      {
+        "MaQuanHuyen": "ChoMoi",
+        "TenQuanHuyen": "Chợ Mới"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "VL",
+    "TenTinhTP": "Vĩnh Long",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "TPVLong",
+        "TenQuanHuyen": "TP. Vĩnh Long"
+      },
+      {
+        "MaQuanHuyen": "LongHo",
+        "TenQuanHuyen": "Long Hồ"
+      },
+      {
+        "MaQuanHuyen": "MangThit",
+        "TenQuanHuyen": "Mang Thít"
+      },
+      {
+        "MaQuanHuyen": "VungLiem",
+        "TenQuanHuyen": "Vũng Liêm"
+      },
+      {
+        "MaQuanHuyen": "TamBinh",
+        "TenQuanHuyen": "Tam Bình"
+      },
+      {
+        "MaQuanHuyen": "BinhMinh",
+        "TenQuanHuyen": "Bình Minh"
+      },
+      {
+        "MaQuanHuyen": "TrNam",
+        "TenQuanHuyen": "Trà Ôn"
+      },
+      {
+        "MaQuanHuyen": "BinhTan",
+        "TenQuanHuyen": "Bình Tân"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "CT",
+    "TenTinhTP": "TP. Cần Thơ",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "QNK",
+        "TenQuanHuyen": "Quận Ninh Kiều"
+      },
+      {
+        "MaQuanHuyen": "QBT2",
+        "TenQuanHuyen": "Quận Bình Thủy"
+      },
+      {
+        "MaQuanHuyen": "QCR",
+        "TenQuanHuyen": "Quận Cái Răng"
+      },
+      {
+        "MaQuanHuyen": "QOMon",
+        "TenQuanHuyen": "Quận Ô Môn"
+      },
+      {
+        "MaQuanHuyen": "QTD",
+        "TenQuanHuyen": "Quận Thốt Nốt"
+      },
+      {
+        "MaQuanHuyen": "HPhongDien",
+        "TenQuanHuyen": "H. Phong Điền"
+      },
+      {
+        "MaQuanHuyen": "HCorDo",
+        "TenQuanHuyen": "H. Cờ Đỏ"
+      },
+      {
+        "MaQuanHuyen": "HThoi",
+        "TenQuanHuyen": "H. Thới Lai"
+      },
+      {
+        "MaQuanHuyen": "HVinh",
+        "TenQuanHuyen": "H. Vĩnh Thạnh"
+      }
+    ]
+  },
+  {
+    "MaTinhTP": "CM",
+    "TenTinhTP": "Cà Mau",
+    "QuanHuyen": [
+      {
+        "MaQuanHuyen": "TPCMau",
+        "TenQuanHuyen": "TP. Cà Mau"
+      },
+      {
+        "MaQuanHuyen": "TNamCan",
+        "TenQuanHuyen": "TX. Ngọc Hiển"
+      },
+      {
+        "MaQuanHuyen": "DamDoi",
+        "TenQuanHuyen": "Đầm Dơi"
+      },
+      {
+        "MaQuanHuyen": "ThaiKhi",
+        "TenQuanHuyen": "Thới Bình"
+      },
+      {
+        "MaQuanHuyen": "TranVan",
+        "TenQuanHuyen": "Trần Văn Thời"
+      },
+      {
+        "MaQuanHuyen": "CaiNuoc",
+        "TenQuanHuyen": "Cái Nước"
+      },
+      {
+        "MaQuanHuyen": "UMinh",
+        "TenQuanHuyen": "U Minh"
+      },
+      {
+        "MaQuanHuyen": "NamCan",
+        "TenQuanHuyen": "Nam Cần"
+      },
+      {
+        "MaQuanHuyen": "PhuTan2",
+        "TenQuanHuyen": "Phú Tân"
+      }
+    ]
+  }
+]

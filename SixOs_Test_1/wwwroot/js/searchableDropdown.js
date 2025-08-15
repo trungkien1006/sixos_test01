@@ -174,14 +174,14 @@ class SearchableDropdown {
     }
   }
     selectOption(option) {
-        this.selectedValue = option.id; // Giá trị thực sự lưu
-        this.hiddenInput.value = option.id; // Lưu vào input hidden để submit
+        this.selectedValue = option.name; // Giá trị thực sự lưu
+        this.hiddenInput.value = option.name; // Lưu vào input hidden để submit
         this.input.value = option.name; // Hiển thị tên tỉnh
         this.searchTerm = '';
         this.closeDropdown();
 
         if (typeof this.onChange === 'function') {
-            this.onChange(option.id);
+            this.onChange(option.name);
         }
     }
 

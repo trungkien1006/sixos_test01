@@ -39,6 +39,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 isChecked: true,
                 display: "Phụ đạo"
             },
+            Active: {
+                isChecked: true,
+                display: "Trạng thái"
+            },
+            CreatedAt: {
+                isChecked: true,
+                display: "Ngày tạo"
+            },
         },
         limits: [
             {
@@ -146,6 +154,8 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     function initSearchLimitPagination(studentManagement) {
+        checkTableDivHeight()
+
         // hiển thị các nút phân trang
         var paginationNumberField = document.getElementById('pagination-number-field')
 
@@ -195,8 +205,6 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         })
 
-      
-
         var limitOptionItemText = ''
 
         studentManagement.limits.forEach(item => {
@@ -233,9 +241,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         for (const [key, value] of Object.entries(studentManagement.colOptions)) {
             colOptionListItemText += `<div class="col-option-item flex justify-between px-6 py-3 hover:duration-300 duration-300 hover:bg-gray-100 cursor-pointer">
-                            <input class="pointer-events-none cursor-not-allowed scale-150" type="checkbox" name="colOption" value="${key}" ${value.isChecked ? "checked" : ""}/>
-                            <p id="rowName">${value.display}</p>
-                        </div>`
+                                        <input class="pointer-events-none cursor-not-allowed scale-150" type="checkbox" name="colOption" value="${key}" ${value.isChecked ? "checked" : ""}/>
+                                        <p id="rowName">${value.display}</p>
+                                    </div>`
         }
 
         colOptionList.innerHTML = colOptionListItemText
@@ -270,88 +278,94 @@ document.addEventListener('DOMContentLoaded', function () {
     // Convert API data to dropdown options
     function convertProvincesToDropDownOptions(data) {
         return data.map(item => ({
-            id: item.id,
-            code: item.maTinhTP,
-            name: item.tenTinhTP,
+            code: item.MaTinhTP,
+            name: item.TenTinhTP,
+            districts: item.QuanHuyen
         }));
     }
 
     // Convert API data to dropdown options for districts
     function convertDistrictsToDropDownOptions(data) {
         return data.map(item => ({
-            id: item.id,
-            code: item.maQuanHuyen,
-            name: item.tenQuanHuyen,
+            code: item.MaQuanHuyen,
+            name: item.TenQuanHuyen,
         }));
     }
 
     const districtDropdown = new SearchableDropdown('districtContainer', 'districtInput', 'districtDropdown', 'district', districts, null, true);
 
     function getDistrictsByProvinceId() {
-        var provinceId = document.getElementById('province').value;
+        var provinceName = document.getElementById('province').value;
 
-        $.ajax({
-            url: `/api/quan-huyen/${provinceId}`,   // URL API cần gọi
-            type: 'GET',              // Hoặc 'POST', 'PUT', 'DELETE'
-            dataType: 'json',         // Kiểu dữ liệu trả về
-            data: {                   // Dữ liệu gửi lên (nếu có)
-            },
-            success: function (response) {
-                console.log("Dữ liệu nhận được:", response);
+        console.log("Tên tỉnh thành:", provinceName);
 
-                districts = convertDistrictsToDropDownOptions(response)
+        for (province of provinces) {
+            if (province.name = provinceName) {
+                districts = convertDistrictsToDropDownOptions(province.districts)
 
                 districtDropdown.setOptions(districts)
-                
-            },
-            error: function (xhr, status, error) {
-                console.error("Lỗi:", error);
+
+                break;
             }
-        });
+        }
+
+        
     }
 
-    $.ajax({
-        url: '/api/tinh-tp',   // URL API cần gọi
-        type: 'GET',              // Hoặc 'POST', 'PUT', 'DELETE'
-        dataType: 'json',         // Kiểu dữ liệu trả về
-        data: {                   // Dữ liệu gửi lên (nếu có)
-        },
-        success: function (response) {
-            console.log("Dữ liệu nhận được:", response);
-
-            provinces = convertProvincesToDropDownOptions(response);
-
-            // Initialize province dropdown
-            const provinceDropdown = new SearchableDropdown('provinceContainer', 'provinceInput', 'provinceDropdown', 'province', provinces, function (value) {
-                // Reset district when province changes
-                districtDropdown.setValue('');
-
-                if (value) {
-                    districtDropdown.enable();
-                    getDistrictsByProvinceId(value);
-                } else {
-                    districtDropdown.disable();
+    function getProvinces() {
+        fetch('data/province_and_district.json') // vì file ở public nên gọi trực tiếp tên file
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Không thể đọc file JSON");
                 }
+                return response.json(); // chuyển từ text sang object
+            })
+            .then(data => {
+                console.log(data); // In: Kiên
+
+                provinces = convertProvincesToDropDownOptions(data);
+
+                // Initialize province dropdown
+                const provinceDropdown = new SearchableDropdown('provinceContainer', 'provinceInput', 'provinceDropdown', 'province', provinces, function (value) {
+                    // Reset district when province changes
+                    districtDropdown.setValue('');
+
+                    if (value) {
+                        districtDropdown.enable();
+                        getDistrictsByProvinceId(value);
+                    } else {
+                        districtDropdown.disable();
+                    }
+                });
+            })
+            .catch(error => {
+                console.error("Lỗi:", error);
             });
-        },
-        error: function (xhr, status, error) {
-            console.error("Lỗi:", error);
-        }
-    });
+    }
+
+    getProvinces()
 
     //Initialize currency masks
     const tuitionInput = document.getElementById('tuitionFee');
     const tuitionHidden = document.getElementById('tuitionFeeHidden');
     const tuitionMask = new CurrencyMask(tuitionInput, {
+        maxDigits: 15,
+        decimalPlaces: 0,
+        decimalSeparator: ',',
+        thousandSeparator: '.',
+        allowNegative: false,
         hiddenInput: tuitionHidden,
-        maxDigits: 15  // allow up to 15 digits
     });
 
     const tutoringInput = document.getElementById('tutoringFee');
     const tutoringHidden = document.getElementById('tutoringFeeHidden');
     const tutoringMask = new CurrencyMask(tutoringInput, {
+        maxDigits: 9,
+        decimalPlaces: 2,
+        decimalSeparator: ',',
+        thousandSeparator: '.',
+        allowNegative: true,
         hiddenInput: tutoringHidden,
-        maxDigits: 15  // allow up to 15 digits
     });
 
   //Initialize date typing for date of birth
@@ -359,55 +373,61 @@ document.addEventListener('DOMContentLoaded', function () {
     const dobHidden = document.getElementById('dob_iso'); // optional
     const maskDOB = new DateMask(dobInput, { showPlaceholder: true, hiddenInput: dobHidden });
 
-    const jdInput = document.getElementById('jd');
-    const jdHidden = document.getElementById('jd_iso'); // optional
+    const jdInput = document.getElementById('joinDate');
+    const jdHidden = document.getElementById('joinDateISO'); // optional
     const maskJD = new DateMask(jdInput, { showPlaceholder: true, hiddenInput: jdHidden });
 
   // Initialize date picker
-    const datePicker = new DatePicker('jd', 'calendarToggle', 'calendar', 'jd_iso');
+    // Initialize when page loads
+    initDatePicker();
 
   // Initialize numeric inputs
-  const numericInputs = ['tuitionFee', 'tutoringFee'];
-  numericInputs.forEach(inputId => {
-    const input = document.getElementById(inputId);
-    input.addEventListener('input', function (e) {
-      const value = e.target.value;
-      // Allow only numbers and decimal point
-      const regex = /^[0-9]*\.?[0-9]*$/;
-      if (value === '' || regex.test(value)) {
-        // Valid input, do nothing
-      } else {
-        // Invalid input, revert to previous value
-        e.target.value = e.target.value.slice(0, -1);
-      }
-    });
-  });
+  //const numericInputs = ['tuitionFee', 'tutoringFee'];
+  //numericInputs.forEach(inputId => {
+  //  const input = document.getElementById(inputId);
+  //  input.addEventListener('input', function (e) {
+  //    const value = e.target.value;
+  //    // Allow only numbers and decimal point
+  //    const regex = /^[0-9]*\.?[0-9]*$/;
+  //    if (value === '' || regex.test(value)) {
+  //      // Valid input, do nothing
+  //    } else {
+  //      // Invalid input, revert to previous value
+  //      e.target.value = e.target.value.slice(0, -1);
+  //    }
+  //  });
+  //});
 
   // Form submission
-  const form = document.getElementById('studentForm');
+    const form = document.getElementById('studentForm');
+
     form.addEventListener('submit', function (e) {
         e.preventDefault();
-        // Collect form data
-        const formData = {
-            studentId: document.getElementById('studentId').value,
-            studentName: document.getElementById('studentName').value,
-            dateOfBirth: document.getElementById('dob_iso').value,
-            joinDate: document.getElementById('jd_iso').value,
-            province: document.getElementById('province').value,
-            district: document.getElementById('district').value,
-            tuitionFee: document.getElementById('tuitionFeeHidden').value,
-            tutoringFee: document.getElementById('tutoringFeeHidden').value
-        };
-        console.log('Form submitted:', formData);
-        isValid = validateForm(formData)
-        // Validate form
-        // If valid, submit form
-        if (isValid) {
-            console.log('Form submitted:', formData);
-            alert('Đã lưu thông tin thành công!');
 
+        // Collect & trim form data (important: trim to avoid "   " passing)
+        const formData = {
+            studentId: (document.getElementById('studentId')?.value ?? '').trim(),
+            studentName: (document.getElementById('studentName')?.value ?? '').trim(),
+            dateOfBirth: (document.getElementById('dob_iso')?.value ?? '').trim(),
+            joinDate: (document.getElementById('joinDateISO')?.value ?? '').trim(),
+            province: (document.getElementById('province')?.value ?? '').trim(),
+            district: (document.getElementById('district')?.value ?? '').trim(),
+            tuitionFee: (document.getElementById('tuitionFeeHidden')?.value ?? '').trim(),
+            tutoringFee: (document.getElementById('tutoringFeeHidden')?.value ?? '').trim()
+        };
+
+        console.log('Form submitted (raw):', formData);
+
+        const isValid = validateForm(formData);
+        console.log('IsValid:', isValid);
+
+        if (isValid) {
+            console.log('FORM VALID -> proceed');
+            alert('Đã lưu thông tin thành công!');
             createStudent(formData);
-    }
+        } else {
+            console.log('FORM INVALID -> blocked submit');
+        }
     });
 
     function createStudent(formData) {
@@ -421,8 +441,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 TenSV: formData.studentName,
                 NgaySinh: formData.dateOfBirth || null,
                 NgayVaoDoan: formData.joinDate || null,
-                IDTinhTP: formData.province ? parseInt(formData.province) : null,
-                IDQuanHuyen: formData.district ? parseInt(formData.district) : null,
+                DiaChi: formData.province + " - " + formData.district,
                 HocPhi: formData.tuitionFee ? parseFloat(formData.tuitionFee) : null,
                 PhuDao: formData.tutoringFee ? parseFloat(formData.tutoringFee) : null
             }),
@@ -436,16 +455,29 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    function formatNumber(num) {
-        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    function formatNumber(value, minDecimals = 0, maxDecimals = 2) {
+        if (value === null || value === undefined || value === '') return '';
+
+        let num = Number(value);
+        if (isNaN(num)) return '';
+
+        // Dùng Intl.NumberFormat cho chuẩn
+        const formatter = new Intl.NumberFormat('vi-VN', {
+            minimumFractionDigits: minDecimals,
+            maximumFractionDigits: maxDecimals
+        });
+
+        return formatter.format(num);
     }
+
+
     function fillStudentTable(data) {
         const tbody = document.querySelector('#student-list tbody');
         tbody.innerHTML = ''; // Xóa hết nội dung cũ
 
         studentManagement.pagination.totalPages = data.totalPages
 
-        data.students.forEach(item => {
+        data.students.forEach((item, index) => {
             // Format ngày dd-MM-yyyy
             const formatDate = (isoStr) => {
                 if (!isoStr) return '';
@@ -462,8 +494,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             var tableHeader = document.getElementById('table-header')
 
-            var tableHeaderItem = ``
-            var tableBodyItem = ``
+            var tableHeaderItem = `<th class="border border-gray-300 px-4 py-2 text-left">STT</th>`
+            var tableBodyItem = `<td class="border border-gray-300 px-4 py-2 !text-left">${index + 1}</td>`
 
             for (const [key, value] of Object.entries(studentManagement.colOptions)) {
                 if (value.isChecked) {
@@ -474,17 +506,45 @@ document.addEventListener('DOMContentLoaded', function () {
                             tableBodyItem += `<td class="border border-gray-300 px-4 py-2 !text-left">${item[key] || ''}</td>`;
                             break;
                         }
-                        case "HocPhi": case "PhuDao": {
-                            tableBodyItem += `<td class="border border-gray-300 px-4 py-2 !text-right">${formatNumber(item[key]) || ''}</td>`;
+                        case "HocPhi": {
+                            tableBodyItem += `<td class="border border-gray-300 px-4 py-2 !text-right">${formatNumber(item[key], 0, 0) || ''}</td>`;
                             break;
                         }
-                        case "NgaySinh": case "NgayVaoDoan": {
+                        case "PhuDao": {
+                            tableBodyItem += `<td class="border border-gray-300 px-4 py-2 !text-right">${formatNumber(item[key], 2, 2) || ''}</td>`;
+                            break;
+                        }
+                        case "Active": {
+                            if (item[key]) {
+                                tableBodyItem += `<td class="border border-gray-300 px-4 py-2 !text-left">
+                                                    <button class="py-2 px-3 rounded-md text-white bg-green-600 hover:bg-green-800 mr-2 cursor-pointer">
+                                                        Đang hoạt động
+                                                    </button>
+                                                </td>`;
+                            } else {
+                                tableBodyItem += `<td class="border border-gray-300 px-4 py-2 !text-left">
+                                                    <button class="py-2 px-3 rounded-md text-white bg-red-600 hover:bg-red-800 mr-2 cursor-pointer">
+                                                        Đã ẩn
+                                                    </button>
+                                                </td>`;
+                            }
+
+                            break;
+                        }
+                        case "NgaySinh": case "NgayVaoDoan": case "CreatedAt": {
                             tableBodyItem += `<td class="border border-gray-300 px-4 py-2 text-center">${formatDate(item[key])}</td>`;
                             break;
                         }
                     }
                 }
             }
+
+            tableHeaderItem += `<th class="border border-gray-300 px-4 py-2 text-left">Hành động</th>`
+
+            tableBodyItem += `<td class="border border-gray-300 px-4 py-2">
+                                <button class="py-2 px-3 rounded-md text-white bg-yellow-600 hover:bg-yellow-800 mr-2 cursor-pointer"><i class="fa-solid fa-pen"></i></button>
+                                <button class="py-2 px-3 rounded-md text-white bg-red-600 hover:bg-red-800 mr-2 cursor-pointer"><i class="fa-solid fa-trash-can"></i></button>
+                            </td>`
 
             row.innerHTML = tableBodyItem;
 
@@ -578,6 +638,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     initSearchLimitPagination(studentManagement)
+
+    function checkTableDivHeight() {
+        const tableDiv = document.getElementById('table');
+        const paginationDiv = document.getElementById('pagination');
+        const paginationContainerDiv = document.getElementById('pagination-container');
+
+        if (tableDiv.scrollHeight > window.innerHeight) {
+            // A dài hơn viewport → B dính ở bottom
+            paginationDiv.classList.add('fixed', 'bottom-0', 'left-0', 'right-0');
+            paginationContainerDiv.classList.add('px-16', 'pb-2')
+            paginationContainerDiv.classList.remove('py-2')
+        } else {
+            // A ngắn hơn viewport → B nằm ngay dưới A
+            paginationDiv.classList.remove('fixed', 'bottom-0', 'left-0', 'right-0');
+            paginationContainerDiv.classList.remove('px-16', 'pb-2')
+            paginationContainerDiv.classList.add('py-2')
+        }
+    }
 });
 
 
